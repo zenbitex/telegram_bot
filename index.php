@@ -23,9 +23,13 @@ $client = new Zelenin\Telegram\Bot\Api('503037693:AAHS_bA1Gobu93DktuW6zKoQ_1ymq8
 
 //BLOCK EXPLORER
 $be_blockcount = 'http://sperocoin.ddns.net:3001/api/getblockcount'; // BLOCK COUNT
+$be_blockcount_api = json_decode(file_get_contents($be_blockcount), true);
+$api_blockcount = $be_blockcount_api;
+
+
 $be_getdifficulty = 'http://sperocoin.ddns.net:3001/api/getdifficulty'; // GET DIFFICULTY
 $be_getmoneysupply = 'http://sperocoin.ddns.net:3001/ext/getmoneysupply'; //MONEY SUPPLY
-$be_blockcount_api = json_decode(file_get_contents($be_blockcoun), true);
+
 
 
 $update = json_decode(file_get_contents('php://input'));
@@ -55,7 +59,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "We are on the block: ".$be_blockcount
+                'text' => "We are on the block: ".$api_blockcount
 				]);
 
     }
