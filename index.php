@@ -20,7 +20,12 @@
 require 'vendor/autoload.php';
 
 $client = new Zelenin\Telegram\Bot\Api('503037693:AAHS_bA1Gobu93DktuW6zKoQ_1ymq8LYsmM'); // Set your access token
-$url = ''; // URL RSS feed
+
+//BLOCK EXPLORER
+$be_blockcount = 'http://sperocoin.ddns.net:3001/api/getblockcount'; // UBLOCK COUNT
+$be_getdifficulty = 'http://sperocoin.ddns.net:3001/api/getdifficulty'; // GET DIFFICULTY
+$be_getmoneysupply = 'http://sperocoin.ddns.net:3001/ext/getmoneysupply'; //MONEY SUPPLY
+
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -31,7 +36,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "You can send email to : Kasra@madadipouya.com"
+        	'text' => "You can send email to : sperocoin@gmail.com"
      	]);
     }
     else if($update->message->text == '/help')
@@ -39,25 +44,19 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog
-    		/help -> Shows list of available commands"
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /status -> Get latest status \n /help -> Shows list of available commands"
     		]);
 
     }
-    else if($update->message->text == '/latest')
+    else if($update->message->text == '/status')
     {
     		Feed::$cacheDir 	= __DIR__ . '/cache';
 			Feed::$cacheExpire 	= '5 hours';
-			$rss 		= Feed::loadRss($url);
-			$items 		= $rss->item;
-			$lastitem 	= $items[0];
-			$lastlink 	= $lastitem->link;
-			$lasttitle 	= $lastitem->title;
-			$message = $lasttitle . " \n ". $lastlink;
-			$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-			$response = $client->sendMessage([
-					'chat_id' => $update->message->chat->id,
-					'text' => $message
+			$blockexplorer 		= Feed::loadRss($be_blockcount);
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "We are on the block: ".$be_blockcount
 				]);
 
     }
