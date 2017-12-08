@@ -6,7 +6,7 @@
 * GeeksWeb Bot (GWB) is free software; you can redistribute it and/or modify
 * it under the terms of the GNU General Public License version 3
 * as published by the Free Software Foundation.
-* 
+*
 * GeeksWeb Bot (GWB) is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -19,7 +19,7 @@
 */
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api(''); // Set your access token
+$client = new Zelenin\Telegram\Bot\Api('503037693:AAHS_bA1Gobu93DktuW6zKoQ_1ymq8LYsmM'); // Set your access token
 $url = ''; // URL RSS feed
 $update = json_decode(file_get_contents('php://input'));
 
@@ -39,7 +39,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog 
+    		'text' => "List of commands :\n /email -> Get email address of the owner \n /latest -> Get latest posts of the blog
     		/help -> Shows list of available commands"
     		]);
 
