@@ -39,7 +39,13 @@ $be_getmoneysupply = 'http://sperocoin.ddns.net:3001/ext/getmoneysupply'; //MONE
 $be_getmoneysupply_api = json_decode(file_get_contents($be_getmoneysupply), true);
 $api_getmoneysupply = $be_getmoneysupply_api;
 
+$be_getmininginfo = 'http://sperocoin.ddns.net:3001/ext/getmininginfo'; //NETWORK INFO
+$be_getmininginfo_api = json_decode(file_get_contents($be_getmininginfo), true);
+$api_getmininginfo = $be_getmininginfo_api['netmhashps'];
 
+$be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/ext/getmininginfo'; //MINING POS INFO
+$be_getmininginfo_pos_api = json_decode(file_get_contents($be_getmininginfo_pos), true);
+$api_be_getmininginfo_pos = $be_getmininginfo_pos_api['netstakeweight'];
 
 $update = json_decode(file_get_contents('php://input'));
 
@@ -68,7 +74,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Here are the status of the Spero network: \n \n We are on the block: ".$api_blockcount." \n\n Mining Difficulty:\n PoW: ".$api_getdifficulty."\n PoS:".$api_getdifficulty2."\n\n Total coins distributed: ".$api_getmoneysupply
+                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n\n Mining Difficulty:\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n\n Total coins distributed: ".$api_getmoneysupply." SPERO's \n Network (MH/s): ".$api_getmininginfo."\n Pos Weight: ".$api_be_getmininginfo_pos
 				]);
 
     }
