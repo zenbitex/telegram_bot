@@ -103,7 +103,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
+    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /social -> Shows the social networks of Spero  \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
     		]);
 
     }
@@ -131,6 +131,15 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "General information: \n Algorithm: X13\n Total currencies: 7 million\n Block Time: 60 seconds\n PoS Return: 25% per year\n Difficulty reset to each block\n 100000 pre-mined coins\n \n Mining Phases:\n Proof of Work + Proof of Stake: 0 - 33331\n Proof of Stake: 33332 - 263250\n Proof of Work + Proof of Stake: up to 263251"
+                ]);
+
+    }
+    else if($update->message->text == '/social')
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "Spero social networks\n Facebook: https://www.facebook.com/sperocoinofficial/\n Slack: http://sperocoin.slack.com/\n Telegram: https://t.me/sperocoin_official\n Discord: https://discord.gg/zAMNCZj\n Trello: https://trello.com/b/jYZvXKDs/sperocoin\n "
                 ]);
 
     }
