@@ -28,7 +28,16 @@ $api_blockcount = $be_blockcount_api;
 
 
 $be_getdifficulty = 'http://sperocoin.ddns.net:3001/api/getdifficulty'; // GET DIFFICULTY
+$be_getdifficulty_api = json_decode(file_get_contents($be_getdifficulty), true);
+$api_getdifficulty = $be_getdifficulty_api['proof-of-work'];
+
+$be_getdifficulty2 = 'http://sperocoin.ddns.net:3001/api/getdifficulty'; // GET DIFFICULTY
+$be_getdifficulty_api2 = json_decode(file_get_contents($be_getdifficulty2), true);
+$api_getdifficulty2 = $be_getdifficulty_api2['proof-of-stake'];
+
 $be_getmoneysupply = 'http://sperocoin.ddns.net:3001/ext/getmoneysupply'; //MONEY SUPPLY
+$be_getmoneysupply_api = json_decode(file_get_contents($be_getmoneysupply), true);
+$api_getmoneysupply = $be_getmoneysupply_api;
 
 
 
@@ -59,7 +68,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "We are on the block: ".$api_blockcount
+                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n Mining Difficulty:\n PoW: ".$api_getdifficulty."\n PoS:".$api_getdifficulty2
 				]);
 
     }
