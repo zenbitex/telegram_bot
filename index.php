@@ -68,7 +68,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n Mining Difficulty:\n PoW: ".$api_getdifficulty."\n PoS:".$api_getdifficulty2
+                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n Mining Difficulty:\n PoW: ".$api_getdifficulty."\n PoS:".$api_getdifficulty2."\n Total coins distributed: ".$api_getmoneysupply
 				]);
 
     }
