@@ -39,11 +39,11 @@ $be_getmoneysupply = 'http://sperocoin.ddns.net:3001/ext/getmoneysupply'; //MONE
 $be_getmoneysupply_api = json_decode(file_get_contents($be_getmoneysupply), true);
 $api_getmoneysupply = $be_getmoneysupply_api;
 
-$be_getmininginfo = 'http://sperocoin.ddns.net:3001/ext/getmininginfo'; //NETWORK INFO
+$be_getmininginfo = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //NETWORK INFO
 $be_getmininginfo_api = json_decode(file_get_contents($be_getmininginfo), true);
 $api_getmininginfo = $be_getmininginfo_api['netmhashps'];
 
-$be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/ext/getmininginfo'; //MINING POS INFO
+$be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //MINING POS INFO
 $be_getmininginfo_pos_api = json_decode(file_get_contents($be_getmininginfo_pos), true);
 $api_be_getmininginfo_pos = $be_getmininginfo_pos_api['netstakeweight'];
 
