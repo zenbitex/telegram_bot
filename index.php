@@ -103,7 +103,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL  \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
+    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
     		]);
 
     }
@@ -112,7 +112,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "📊 Here are the status of the Spero network: \n 🔰 We are on the block: ".$api_blockcount." \n 🔨 Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n 💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n 🔀 Network (MH/s): ".$api_getmininginfo."\n 🔄 Pos Weight: ".$api_be_getmininginfo_pos
+                'text' => "📊 Here are the status of the Spero network: \n\n 🔰 We are on the block: ".$api_blockcount." \n\n 🔨 Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n\n 💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n\n 🔀 Network (MH/s): ".$api_getmininginfo."\n\n 🔄 Pos Weight: ".$api_be_getmininginfo_pos
 				]);
 
     }
@@ -121,7 +121,16 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Price: \n BTC: ".$latest_pricecm."\n USD: ".number_format($multiusd, 2, ',', '.')."\n BRL: ".number_format($multi, 2, ',', '.')
+                'text' => "💵 Price: \n BTC: ".$latest_pricecm."\n USD: ".number_format($multiusd, 2, ',', '.')."\n BRL: ".number_format($multi, 2, ',', '.')
+                ]);
+
+    }
+    else if($update->message->text == '/info')
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "General information: \n Algorithm: X13\n Total currencies: 7 million\n Block Time: 60 seconds\n PoS Return: 25% per year\n Difficulty reset to each block\n 100000 pre-mined coins\n \n Mining Phases:\n Proof of Work + Proof of Stake: 0 - 33331\n Proof of Stake: 33332 - 263250\n Proof of Work + Proof of Stake: up to 263251"
                 ]);
 
     }
