@@ -98,12 +98,12 @@ try {
         	'text' => "📝 You can send email to : sperocoin@gmail.com"
      	]);
     }
-    else if($update->message->text == '/help')
+    else if($update->message->text == '/commands')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /social -> Shows the social networks of Spero  \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
+    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /social -> Shows the social networks of Spero  \n /email -> Get email address of the owner \n /commands -> Shows list of available commands"
     		]);
 
     }
