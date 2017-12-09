@@ -47,6 +47,44 @@ $be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //MI
 $be_getmininginfo_pos_api = json_decode(file_get_contents($be_getmininginfo_pos), true);
 $api_be_getmininginfo_pos = $be_getmininginfo_pos_api['netstakeweight'];
 
+
+//MARKETS
+//FUNCTION COINS MARKETS
+$api_coinsmarkets = "https://coinsmarkets.com/apicoin.php";
+$union_api_coinsmarkets = json_decode(file_get_contents($api_coinsmarkets), true);
+//BITCOIN_SPEROCOIN
+$result_coinsmarkets = $union_api_coinsmarkets['BTC_SPERO'];
+//LAST PRICE
+$latest_pricecm = $result_coinsmarkets['last'];
+//24h trade
+$day_pricecm = $result_coinsmarkets['24htrade'];
+//FUNCTION COINS MARKETS
+
+//FUNCTION BRAZILIEX
+$api_braziliex = "https://braziliex.com/api/v1/public/ticker";
+$union_api_braziliex = json_decode(file_get_contents($api_braziliex), true);
+//BITCOIN_BRL
+$result_braziliex = $union_api_braziliex['btc_brl'];
+//LAST PRICE BRL
+$latest_pricebr = $result_braziliex['last'];
+//24h tradeBRL
+$day_pricebr = $result_braziliex['baseVolume24'];
+//FUNCTION BRAZILIEX
+
+//FUNCTION BITCOIN_USD
+$api_bitcoin = "https://blockchain.info/pt/ticker";
+$union_api_bitcoin = json_decode(file_get_contents($api_bitcoin), true);
+//BITCOIN_DOLAR
+$result_bitcoin_dolar = $union_api_bitcoin['USD'];
+
+//LAST PRICE USD
+$latest_priceusd = $result_bitcoin_dolar['last'];
+//24h trade USD
+$day_priceusd = $result_bitcoin_dolar['15m'];
+
+$multi = $result_coinsmarkets['last'] * $result_braziliex['last'];
+$multiusd = $result_coinsmarkets['last'] * $result_bitcoin_dolar['last'];
+
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -65,7 +103,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands \r :\n /email -> Get email address of the owner \n /status -> Get latest status \n /help -> Shows list of available commands"
+    		'text' => "List of commands:\n /status -> Get latest status \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
     		]);
 
     }
@@ -74,8 +112,17 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n\n Mining Difficulty:\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n\n Total coins distributed: ".$api_getmoneysupply." SPERO's \n Network (MH/s): ".$api_getmininginfo."\n Pos Weight: ".$api_be_getmininginfo_pos
+                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n Total coins distributed: ".$api_getmoneysupply." SPERO's \n Network (MH/s): ".$api_getmininginfo."\n Pos Weight: ".$api_be_getmininginfo_pos
 				]);
+
+    }
+    else if($update->message->text == '/price')
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "Price: \n BTC: ".$latest_pricecm."\n USD: ".$multiusd."\n BRL: ".$multi
+                ]);
 
     }
     else
