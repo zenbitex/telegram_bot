@@ -65,7 +65,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "<b>List of commands</b> :\n /email -> Get email address of the owner \n /status -> Get latest status \n /help -> Shows list of available commands"
+    		'text' => "**List of commands** :\n /email -> Get email address of the owner \n /status -> Get latest status \n /help -> Shows list of available commands"
     		]);
 
     }
