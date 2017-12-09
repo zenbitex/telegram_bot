@@ -121,7 +121,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Price: \n BTC: ".$latest_pricecm."\n USD: ".$multiusd."\n BRL: ".$multi
+                'text' => "Price: \n BTC: ".$latest_pricecm."\n USD: ".number_format($multiusd, 2, ',', '.')."\n BRL: ".number_format($multi, 2, ',', '.')
                 ]);
 
     }
