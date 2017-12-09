@@ -130,7 +130,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Invalid command, please use /help to get list of available commands \xE2\x9C\x82"
+    		'text' => "Invalid command, please use /help to get list of available commands 😜"
     		]);
     }
 
