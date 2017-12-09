@@ -95,7 +95,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
         	'chat_id' => $update->message->chat->id,
-        	'text' => "You can send email to : sperocoin@gmail.com"
+        	'text' => "📝 You can send email to : sperocoin@gmail.com"
      	]);
     }
     else if($update->message->text == '/help')
@@ -103,7 +103,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL  \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
+    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL  \n /email -> Get email address of the owner \n /help -> Shows list of available commands"
     		]);
 
     }
@@ -112,7 +112,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Here are the status of the Spero network: \n We are on the block: ".$api_blockcount." \n Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n Total coins distributed: ".$api_getmoneysupply." SPERO's \n Network (MH/s): ".$api_getmininginfo."\n Pos Weight: ".$api_be_getmininginfo_pos
+                'text' => "📊 Here are the status of the Spero network: \n 🔰 We are on the block: ".$api_blockcount." \n 🔨 Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n 💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n 🔀 Network (MH/s): ".$api_getmininginfo."\n 🔄 Pos Weight: ".$api_be_getmininginfo_pos
 				]);
 
     }
@@ -130,7 +130,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "Invalid command, please use /help to get list of available commands 😜"
+    		'text' => "Invalid command, please use /help to get list of available commands"
     		]);
     }
 
