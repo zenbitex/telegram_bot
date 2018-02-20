@@ -112,7 +112,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "📊 Here are the status of the Spero network: \n\n 🔰 We are on the block: ".$api_blockcount." \n\n 🔨 Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n\n 💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n\n 🔀 Network (MH/s): ".$api_getmininginfo."\n\n 🔄 Pos Weight: ".$api_be_getmininginfo_pos
+                'text' => "📊 Here are the status of the Spero network: \n🔰 We are on the block: ".$api_blockcount." \n🔨 Mining Difficulty\n PoW: ".$api_getdifficulty."\n PoS: ".$api_getdifficulty2."\n💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n🔀 Network (MH/s): ".$api_getmininginfo."\n🔄 Pos Weight: ".$api_be_getmininginfo_pos
 				]);
 
     }
