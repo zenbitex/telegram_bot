@@ -130,7 +130,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "General information: \n Algorithm: X13\n Total currencies: 7 million\n Block Time: 60 seconds\n PoS Return: 25% per year\n Difficulty reset to each block\n 100000 pre-mined coins\n \n Mining Phases:\n Proof of Work + Proof of Stake: 0 - 33331\n Proof of Stake: 33332 - 263250\n Proof of Work + Proof of Stake: up to 263251"
+                'text' => "General information: \n Algorithm: X13\n Total currencies: 7 million\n Block Time: 60 seconds\n PoS Return: 25% per year\n Difficulty reset to each block\n 100000 pre-mined coins\n \n Mining Phases:\n Proof of Work + Proof of Stake: 0 - 33331\n Proof of Stake: 33332 - 263250\n Proof of Work + Proof of Stake: up to 263251\n🔰 We are on the block: ".$api_blockcount.""
                 ]);
 
     }
