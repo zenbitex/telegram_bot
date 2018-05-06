@@ -89,8 +89,16 @@ $update = json_decode(file_get_contents('php://input'));
 
 //your app
 try {
+    if($update->message->text == '/start')
+    {
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /social -> Shows the social networks of Spero  \n /email -> Get email address of the owner \n /commands -> Shows list of available commands"
+            ]);
 
-    if($update->message->text == '/email')
+    }
+    else if($update->message->text == '/email')
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
