@@ -134,7 +134,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/social')
+    else ($update->message->text == '/social')
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -143,13 +143,10 @@ try {
                 ]);
 
     }
-    else
-    {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Invalid command, please use /commands to get list of available commands"
-    		]);
-    }
+
+} catch (\Zelenin\Telegram\Bot\NotOkException $e) {
+
+    //echo error message ot log it
+    //echo $e->getMessage();
 
 }
