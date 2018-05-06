@@ -111,7 +111,7 @@ try {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
     		'chat_id' => $update->message->chat->id,
-    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /social -> Shows the social networks of Spero  \n /email -> Get email address of the owner \n /commands -> Shows list of available commands"
+    		'text' => "📖 List of commands:\n /status -> Get latest status \n /price -> Get price in BTC, USD, BRL \n /info -> Technical information \n /social -> Shows the social networks of Spero  \n /email -> Get email address of the owner \n /commands -> Shows list of available commands \n /apk -> Download Apk Android(WebWallet Based)"
     		]);
 
     }
@@ -147,7 +147,16 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "Spero social networks\n Facebook: https://www.facebook.com/sperocoinofficial/\n Slack: http://sperocoin.slack.com/\n Telegram: https://t.me/sperocoin_official\n Discord: https://discord.gg/zAMNCZj\n Trello: https://trello.com/b/jYZvXKDs/sperocoin\n "
+                'text' => "Spero social networks\n Facebook: https://www.facebook.com/sperocoinofficial/\n Slack: http://sperocoin.slack.com/\n Telegram: https://t.me/sperocoin_official\n Discord: https://discord.gg/zAMNCZj\n Trello: https://trello.com/b/jYZvXKDs/sperocoin\n Channel in Telegram: https://t.me/sperocoin_channel/"
+                ]);
+
+    }
+    else if($update->message->text == '/apk')
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "Download External Link: https://sperocoin.ddns.net/files/SperoCoin-v1.1BETA.apk \n Download From Channel in Telegram: https://t.me/sperocoin_channel/8"
                 ]);
 
     }
