@@ -152,9 +152,4 @@ try {
     		]);
     }
 
-} catch (\Zelenin\Telegram\Bot\NotOkException $e) {
-
-    //echo error message ot log it
-    //echo $e->getMessage();
-
 }
