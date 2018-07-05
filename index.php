@@ -79,9 +79,13 @@ $resultado_dolar = $array_dolar['BRL'];
 $api_doge = "https://api.cryptonator.com/api/ticker/doge-usd";
 $union_api_doge = json_decode(file_get_contents($api_doge), true);
 //DOGE_USD
-$result_doge_dolar = $union_api_doge['price'];
+$result_doge_dolar = $union_api_doge['ticker'];
+
+//LAST PRICE USD
+$latest_pricedoge = $result_doge_dolar['price'];
+
 //DOGE_USD_TO_BRL
-$result_doge_brl = $result_doge_dolar / resultado_dolar;
+$result_doge_brl = $latest_pricedoge / resultado_dolar;
 
 
 
