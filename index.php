@@ -47,19 +47,6 @@ $be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //MI
 $be_getmininginfo_pos_api = json_decode(file_get_contents($be_getmininginfo_pos), true);
 $api_be_getmininginfo_pos = $be_getmininginfo_pos_api['netstakeweight'];
 
-
-//MARKETS
-//FUNCTION COINS MARKETS
-$api_coinsmarkets = "https://coinsmarkets.com/apicoin.php";
-$union_api_coinsmarkets = json_decode(file_get_contents($api_coinsmarkets), true);
-//BITCOIN_SPEROCOIN
-$result_coinsmarkets = $union_api_coinsmarkets['BTC_SPERO'];
-//LAST PRICE
-$latest_pricecm = $result_coinsmarkets['last'];
-//24h trade
-$day_pricecm = $result_coinsmarkets['24htrade'];
-//FUNCTION COINS MARKETS
-
 //FUNCTION BRAZILIEX
 $api_braziliex = "https://braziliex.com/api/v1/public/ticker";
 $union_api_braziliex = json_decode(file_get_contents($api_braziliex), true);
