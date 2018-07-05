@@ -76,10 +76,10 @@ $array_dolar = array_reverse($juncao_api_dolar['rates']);
 $resultado_dolar = $array_dolar['BRL'];
 
 //FUNCTION DOGE
-$api_doge = "https://api.coinmarketcap.com/v1/ticker/dogecoin/";
+$api_doge = "https://api.cryptonator.com/api/ticker/doge-usd";
 $union_api_doge = json_decode(file_get_contents($api_doge), true);
 //DOGE_USD
-$result_doge_dolar = $union_api_doge['price_usd'];
+$result_doge_dolar = $union_api_doge['price'];
 //DOGE_USD_TO_BRL
 $result_doge_brl = $result_doge_dolar / resultado_dolar;
 
