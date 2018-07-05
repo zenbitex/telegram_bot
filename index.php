@@ -161,7 +161,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n USD: ".number_format($calc_fase03_usd, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_brl, 9, '.', ',')." \n DOGE: ".number_format($result_doge_brl, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
+                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n USD: ".number_format($calc_fase03_usd, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_brl, 9, '.', ',')." \n DOGE: ".number_format($result_doge_dolar, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
                 ]);
 
     }
