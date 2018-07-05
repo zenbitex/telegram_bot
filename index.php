@@ -47,47 +47,30 @@ $be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //MI
 $be_getmininginfo_pos_api = json_decode(file_get_contents($be_getmininginfo_pos), true);
 $api_be_getmininginfo_pos = $be_getmininginfo_pos_api['netstakeweight'];
 
-//FUNCTION BRAZILIEX
-$api_braziliex = "https://braziliex.com/api/v1/public/ticker";
-$union_api_braziliex = json_decode(file_get_contents($api_braziliex), true);
-//BITCOIN_BRL
-$result_braziliex = $union_api_braziliex['btc_brl'];
-//LAST PRICE BRL
-$latest_pricebr = $result_braziliex['last'];
-//24h tradeBRL
-$day_pricebr = $result_braziliex['baseVolume24'];
-//FUNCTION BRAZILIEX
-
-//FUNCTION BITCOIN_USD
-$api_bitcoin = "https://blockchain.info/pt/ticker";
+//FUNCTION BITCOIN
+$api_bitcoin = "https://api.coingecko.com/api/v3/coins/bitcoin";
 $union_api_bitcoin = json_decode(file_get_contents($api_bitcoin), true);
 //BITCOIN_DOLAR
-$result_bitcoin_dolar = $union_api_bitcoin['USD'];
+$result_bitcoin_dolar = $union_api_bitcoin['market_data'];
+$result_bitcoin_dolar2 = $result_bitcoin_dolar['current_price'];
+//LAST PRICE BRL
+$latest_pricebtc = $result_bitcoin_dolar2['brl'];
 
-//LAST PRICE USD
-$latest_priceusd = $result_bitcoin_dolar['last'];
-//24h trade USD
-$day_priceusd = $result_bitcoin_dolar['15m'];
+
+//FUNCTION DOGE
+$api_doge = "https://api.coingecko.com/api/v3/coins/dogecoin";
+$union_api_doge = json_decode(file_get_contents($api_doge), true);
+//DOGE_USD
+$result_doge_dolar = $union_api_doge['market_data'];
+$result_doge_dolar2 = $result_doge_dolar['current_price'];
+//LAST PRICE BRL
+$latest_pricedoge = $result_doge_dolar2['brl'];
 
 //DÓLAR
 $api_dolar = "http://data.fixer.io/api/latest?access_key=6690e94877140dd5738a2befffe31b84&format=1";
 $juncao_api_dolar = json_decode(file_get_contents($api_dolar), true);
 $array_dolar = array_reverse($juncao_api_dolar['rates']);
 $resultado_dolar = $array_dolar['BRL'];
-
-//FUNCTION DOGE
-$api_doge = "https://api.cryptonator.com/api/ticker/doge-usd";
-$union_api_doge = json_decode(file_get_contents($api_doge), true);
-//DOGE_USD
-$result_doge_dolar = $union_api_doge['ticker'];
-
-//LAST PRICE USD
-$latest_pricedoge = $result_doge_dolar['price'];
-
-//DOGE_USD_TO_BRL
-$result_doge_brl = $resultado_dolar * $latest_pricedoge;
-
-
 
 //FASES
 $fase01 = 0.03;
@@ -101,25 +84,25 @@ $faseatual = $fase03;
 
 //CALULO DAS FASES
 //FASE 01
-$calc_fase01_brl = $fase01 / $latest_pricebr;
+$calc_fase01_btc = $fase01 / $latest_pricebtc;
 $calc_fase01_usd = $fase01 / $resultado_dolar;
-$calc_fase01_doge = $fase01 / $result_doge_brl;
+$calc_fase01_doge = $fase01 / $latest_pricedoge;
 //FASE 02
-$calc_fase02_brl = $fase02 / $latest_pricebr;
+$calc_fase02_btc = $fase02 / $latest_pricebtc;
 $calc_fase02_usd = $fase02 / $resultado_dolar;
-$calc_fase02_doge = $fase02 / $result_doge_brl;
+$calc_fase02_doge = $fase02 / $latest_pricedoge;
 //FASE 03
-$calc_fase03_brl = $fase03 / $latest_pricebr;
+$calc_fase03_btc = $fase03 / $latest_pricebtc;
 $calc_fase03_usd = $fase03 / $resultado_dolar;
-$calc_fase03_doge = $fase03 / $result_doge_brl;
+$calc_fase03_doge = $fase03 / $latest_pricedoge;
 //FASE 04
-$calc_fase04_brl = $fase04 / $latest_pricebr;
+$calc_fase04_btc = $fase04 / $latest_pricebtc;
 $calc_fase04_usd = $fase04 / $resultado_dolar;
-$calc_fase04_doge = $fase04 / $result_doge_brl;
+$calc_fase04_doge = $fase04 / $latest_pricedoge;
 //FASE 05
-$calc_fase05_brl = $fase05 / $latest_pricebr;
+$calc_fase05_btc = $fase05 / $latest_pricebtc;
 $calc_fase05_usd = $fase05 / $resultado_dolar;
-$calc_fase05_doge = $fase05 / $result_doge_brl;
+$calc_fase05_doge = $fase05 / $latest_pricedoge;
 
 $update = json_decode(file_get_contents('php://input'));
 
@@ -165,7 +148,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n USD: ".number_format($calc_fase03_usd, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_brl, 9, '.', ',')." \n DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
+                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n USD: ".number_format($calc_fase03_usd, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_btc, 9, '.', ',')." \n DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
                 ]);
 
     }
