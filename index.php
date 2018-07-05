@@ -85,6 +85,8 @@ $day_priceusd = $result_bitcoin_dolar['15m'];
 $multi = $result_coinsmarkets['last'] * $result_braziliex['last'];
 $multiusd = $result_coinsmarkets['last'] * $result_bitcoin_dolar['last'];
 
+$preco = "R$ 0,12";
+
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -129,7 +131,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "💵 Price: \n BTC: ".$latest_pricecm."\n USD: ".number_format($multiusd, 2, ',', '.')."\n BRL: ".number_format($multi, 2, ',', '.')."\n \n Cotação/Price: CoinsMarkets[BTC] X Braziliex[BRL] "
+                'text' => "💵 Price: \n BRL: ".$preco."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
                 ]);
 
     }
