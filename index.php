@@ -85,7 +85,7 @@ $result_doge_dolar = $union_api_doge['ticker'];
 $latest_pricedoge = $result_doge_dolar['price'];
 
 //DOGE_USD_TO_BRL
-$result_doge_brl = resultado_dolar * $latest_pricedoge;
+$result_doge_brl = $resultado_dolar * $latest_pricedoge;
 
 
 
