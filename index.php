@@ -69,10 +69,53 @@ $latest_priceusd = $result_bitcoin_dolar['last'];
 //24h trade USD
 $day_priceusd = $result_bitcoin_dolar['15m'];
 
-$multi = $result_coinsmarkets['last'] * $result_braziliex['last'];
-$multiusd = $result_coinsmarkets['last'] * $result_bitcoin_dolar['last'];
+//DÓLAR
+$api_dolar = "http://data.fixer.io/api/latest?access_key=6690e94877140dd5738a2befffe31b84&format=1";
+$juncao_api_dolar = json_decode(file_get_contents($api_dolar), true);
+$array_dolar = array_reverse($juncao_api_dolar['rates']);
+$resultado_dolar = $array_dolar['BRL'];
 
-$preco = "R$ 0,12";
+//FUNCTION DOGE
+$api_doge = "https://api.coinmarketcap.com/v1/ticker/dogecoin/";
+$union_api_doge = json_decode(file_get_contents($api_doge), true);
+//DOGE_USD
+$result_doge_dolar = $union_api_doge['price_usd'];
+//DOGE_USD_TO_BRL
+$result_doge_brl = $result_doge_dolar / resultado_dolar;
+
+
+
+//FASES
+$fase01 = 0.03;
+$fase02 = 0.05;
+$fase03 = 0.12;
+$fase04 = 0.25;
+$fase05 = 0.60;
+
+//FASE ATUAL
+$faseatual = $fase03;
+
+//CALULO DAS FASES
+//FASE 01
+$calc_fase01_brl = $fase01 / $latest_pricebr;
+$calc_fase01_usd = $fase01 / $resultado_dolar;
+$calc_fase01_doge = $fase01 / $result_doge_brl;
+//FASE 02
+$calc_fase02_brl = $fase02 / $latest_pricebr;
+$calc_fase02_usd = $fase02 / $resultado_dolar;
+$calc_fase02_doge = $fase02 / $result_doge_brl;
+//FASE 03
+$calc_fase03_brl = $fase03 / $latest_pricebr;
+$calc_fase03_usd = $fase03 / $resultado_dolar;
+$calc_fase03_doge = $fase03 / $result_doge_brl;
+//FASE 04
+$calc_fase04_brl = $fase04 / $latest_pricebr;
+$calc_fase04_usd = $fase04 / $resultado_dolar;
+$calc_fase04_doge = $fase04 / $result_doge_brl;
+//FASE 05
+$calc_fase05_brl = $fase05 / $latest_pricebr;
+$calc_fase05_usd = $fase05 / $resultado_dolar;
+$calc_fase05_doge = $fase05 / $result_doge_brl;
 
 $update = json_decode(file_get_contents('php://input'));
 
@@ -118,7 +161,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "💵 Price: \n BRL: ".$preco."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
+                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n USD: ".number_format($calc_fase03_usd, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_brl, 9, '.', ',')." \n DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
                 ]);
 
     }
