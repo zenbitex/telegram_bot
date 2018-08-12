@@ -22,28 +22,28 @@ require 'vendor/autoload.php';
 $client = new Zelenin\Telegram\Bot\Api('503037693:AAHS_bA1Gobu93DktuW6zKoQ_1ymq8LYsmM'); // Set your access token
 
 //BLOCK EXPLORER
-$be_blockcount = 'http://sperocoin.ddns.net:3001/api/getblockcount'; // BLOCK COUNT
+$be_blockcount = 'http://35.198.22.94:3001/api/getblockcount'; // BLOCK COUNT
 $be_blockcount_api = json_decode(file_get_contents($be_blockcount), true);
 $api_blockcount = $be_blockcount_api;
 
 
-$be_getdifficulty = 'http://sperocoin.ddns.net:3001/api/getdifficulty'; // GET DIFFICULTY
+$be_getdifficulty = 'http://35.198.22.94:3001/api/getdifficulty'; // GET DIFFICULTY
 $be_getdifficulty_api = json_decode(file_get_contents($be_getdifficulty), true);
 $api_getdifficulty = $be_getdifficulty_api['proof-of-work'];
 
-$be_getdifficulty2 = 'http://sperocoin.ddns.net:3001/api/getdifficulty'; // GET DIFFICULTY
+$be_getdifficulty2 = 'http://35.198.22.94:3001/api/getdifficulty'; // GET DIFFICULTY
 $be_getdifficulty_api2 = json_decode(file_get_contents($be_getdifficulty2), true);
 $api_getdifficulty2 = $be_getdifficulty_api2['proof-of-stake'];
 
-$be_getmoneysupply = 'http://sperocoin.ddns.net:3001/ext/getmoneysupply'; //MONEY SUPPLY
+$be_getmoneysupply = 'http://35.198.22.94:3001/ext/getmoneysupply'; //MONEY SUPPLY
 $be_getmoneysupply_api = json_decode(file_get_contents($be_getmoneysupply), true);
 $api_getmoneysupply = $be_getmoneysupply_api;
 
-$be_getmininginfo = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //NETWORK INFO
+$be_getmininginfo = 'http://35.198.22.94:3001/api/getmininginfo'; //NETWORK INFO
 $be_getmininginfo_api = json_decode(file_get_contents($be_getmininginfo), true);
 $api_getmininginfo = $be_getmininginfo_api['netmhashps'];
 
-$be_getmininginfo_pos = 'http://sperocoin.ddns.net:3001/api/getmininginfo'; //MINING POS INFO
+$be_getmininginfo_pos = 'http://35.198.22.94:3001/api/getmininginfo'; //MINING POS INFO
 $be_getmininginfo_pos_api = json_decode(file_get_contents($be_getmininginfo_pos), true);
 $api_be_getmininginfo_pos = $be_getmininginfo_pos_api['netstakeweight'];
 
