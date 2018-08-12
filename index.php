@@ -19,7 +19,7 @@
 */
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api('503037693:AAHS_bA1Gobu93DktuW6zKoQ_1ymq8LYsmM'); // Set your access token
+$client = new Zelenin\Telegram\Bot\Api('503037693:AAHd5JEw6KSxXgJVh8JPemIGF-AmIxOXDqM'); // Set your access token
 
 //BLOCK EXPLORER
 $be_blockcount = 'http://35.198.22.94:3001/api/getblockcount'; // BLOCK COUNT
