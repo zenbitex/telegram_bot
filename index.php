@@ -66,11 +66,7 @@ $result_doge_dolar2 = $result_doge_dolar['current_price'];
 //LAST PRICE BRL
 $latest_pricedoge = $result_doge_dolar2['brl'];
 
-//DÓLAR
-$api_dolar = "http://data.fixer.io/api/latest?access_key=6690e94877140dd5738a2befffe31b84&format=1";
-$juncao_api_dolar = json_decode(file_get_contents($api_dolar), true);
-$array_dolar = array_reverse($juncao_api_dolar['rates']);
-$resultado_dolar = $array_dolar['BRL'];
+
 
 //FASES
 $fase01 = 0.03;
@@ -85,23 +81,18 @@ $faseatual = $fase03;
 //CALULO DAS FASES
 //FASE 01
 $calc_fase01_btc = $fase01 / $latest_pricebtc;
-$calc_fase01_usd = $fase01 / $resultado_dolar;
 $calc_fase01_doge = $fase01 / $latest_pricedoge;
 //FASE 02
 $calc_fase02_btc = $fase02 / $latest_pricebtc;
-$calc_fase02_usd = $fase02 / $resultado_dolar;
 $calc_fase02_doge = $fase02 / $latest_pricedoge;
 //FASE 03
 $calc_fase03_btc = $fase03 / $latest_pricebtc;
-$calc_fase03_usd = $fase03 / $resultado_dolar;
 $calc_fase03_doge = $fase03 / $latest_pricedoge;
 //FASE 04
 $calc_fase04_btc = $fase04 / $latest_pricebtc;
-$calc_fase04_usd = $fase04 / $resultado_dolar;
 $calc_fase04_doge = $fase04 / $latest_pricedoge;
 //FASE 05
 $calc_fase05_btc = $fase05 / $latest_pricebtc;
-$calc_fase05_usd = $fase05 / $resultado_dolar;
 $calc_fase05_doge = $fase05 / $latest_pricedoge;
 
 $update = json_decode(file_get_contents('php://input'));
@@ -148,7 +139,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n USD: ".number_format($calc_fase03_usd, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_btc, 9, '.', ',')." \n DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
+                'text' => "💵 Price: \n BRL: ".number_format($fase03, 3, ',', '.')." \n BTC: ".number_format($calc_fase03_btc, 9, '.', ',')." \n DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n \n Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange "
                 ]);
 
     }
