@@ -112,16 +112,16 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => "
-📖 List of commands:\n
-    /status -> Get latest status \n
-    /price -> Get price in BTC, USD, BRL \n
-    /info -> Technical information \n
-    /social -> Shows the social networks of Spero \n
-    /email -> Get email address of the owner \n
-    /commands -> Shows list of available commands \n
-    /apk -> Download Apk Android(WebWallet Based) \n
-    /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
-    /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
+📖 List of commands:
+    /status -> Get latest status
+    /price -> Get price in BTC, USD, BRL
+    /info -> Technical information
+    /social -> Shows the social networks of Spero
+    /email -> Get email address of the owner
+    /commands -> Shows list of available commands
+    /apk -> Download Apk Android(WebWallet Based)
+    /walletwindowsqt -> Download the latest version of QT wallet for Windows
+    /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows
     /compilelinux -> Compile Yourself Spero Code
  "
             ]);
