@@ -276,7 +276,7 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => '
+                'text' => "
                             Download and install the dependencies:  \n
                             sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev qt-sdk libminiupnpc-dev qrencode libqrencode-dev git libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils
                              \n \n
@@ -289,12 +289,7 @@ try {
                              \n \n
                             Run daemon in the DigitalCoinBRL/src directory: \n
                             ./SperoCoind
-                             \n \n
-                            [OPTIONAL]Compile the QT in the DigitalCoinBRL directory: \n
-                            sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev \n
-                            qmake SperoCoin-qt.pro "USE_UPNP=-" "USE_QRCODE=1" \n
-                            make -f Makefile
-                          '
+                          "
                 ]);
 
     }
