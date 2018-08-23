@@ -106,7 +106,7 @@ $update = json_decode(file_get_contents('php://input'));
 
 //your app
 try {
-    if($update->message->text == '/start'|| $update->message->text == '/start@sperocoinbot') //Comando "/start" que retorna os todos os comando do bot ao iniciá-lo pela primeira vez
+    if($update->message->text == '/start'|| '/start@sperocoinbot') //Comando "/start" que retorna os todos os comando do bot ao iniciá-lo pela primeira vez
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
@@ -127,7 +127,7 @@ try {
             ]);
 
     }
-    else if($update->message->text == '/email'|| $update->message->text == '/email@sperocoinbot') //Comando "/email" que retorna o(s) e-mail('s) da Foundation SperoCoin
+    else if($update->message->text == '/email'|| '/email@sperocoinbot') //Comando "/email" que retorna o(s) e-mail('s) da Foundation SperoCoin
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
@@ -137,7 +137,7 @@ try {
                       "
      	]);
     }
-    else if($update->message->text == '/commands'|| $update->message->text == '/commands@sperocoinbot') //Comando "/commands" que retorna todos os comandos do bot
+    else if($update->message->text == '/commands'|| '/commands@sperocoinbot') //Comando "/commands" que retorna todos os comandos do bot
     {
     	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
     	$response = $client->sendMessage([
@@ -158,7 +158,7 @@ try {
     		]);
 
     }
-    else if($update->message->text == '/status'|| $update->message->text == '/status@sperocoinbot') //Comando "/status" que retorna o status atual da rede SperoCoin
+    else if($update->message->text == '/status'|| '/status@sperocoinbot') //Comando "/status" que retorna o status atual da rede SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -179,7 +179,7 @@ try {
 				]);
 
     }
-    else if($update->message->text == '/price'|| $update->message->text == '/price@sperocoinbot') //Comando "/price" que retorna os valores em diversas moedas de acordo com as exchanges que negociam a SperoCoin
+    else if($update->message->text == '/price'|| '/price@sperocoinbot') //Comando "/price" que retorna os valores em diversas moedas de acordo com as exchanges que negociam a SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -195,7 +195,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/info'|| $update->message->text == '/info@sperocoinbot') //Comando "/info" que retorna as informações gerais e técnicas da SperoCoin
+    else if($update->message->text == '/info'|| '/info@sperocoinbot') //Comando "/info" que retorna as informações gerais e técnicas da SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -218,7 +218,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/social'|| $update->message->text == '/social@sperocoinbot') //Comando "/social" que retorna todas as redes sociais da SperoCoin
+    else if($update->message->text == '/social'|| '/social@sperocoinbot') //Comando "/social" que retorna todas as redes sociais da SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -235,7 +235,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/apk'|| $update->message->text == '/apk@sperocoinbot') //Comando "/apk" que retorna o link para download da Wallet SperoCoin para dispositivos móveis
+    else if($update->message->text == '/apk'|| '/apk@sperocoinbot') //Comando "/apk" que retorna o link para download da Wallet SperoCoin para dispositivos móveis
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -247,7 +247,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/walletwindowsqt'|| $update->message->text == '/walletwindowsqt@sperocoinbot') //Comando "/walletwindowsqt" que retorna o link para download da QT Wallet SperoCoin para Windows
+    else if($update->message->text == '/walletwindowsqt'|| '/walletwindowsqt@sperocoinbot') //Comando "/walletwindowsqt" que retorna o link para download da QT Wallet SperoCoin para Windows
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -259,7 +259,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/walletwindowsdaemon'|| $update->message->text == '/walletwindowsdaemon@sperocoinbot') //Comando "/walletwindowsdaemon" que retorna o link para download da Wallet daemon SperoCoin para Windows
+    else if($update->message->text == '/walletwindowsdaemon'|| '/walletwindowsdaemon@sperocoinbot') //Comando "/walletwindowsdaemon" que retorna o link para download da Wallet daemon SperoCoin para Windows
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -271,7 +271,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/compilelinux'|| $update->message->text == '/compilelinux@sperocoinbot') //Comando "/compilelinux" que retorna um texto explicativo de como instalar a Wallet em sistemas baseados em Linux
+    else if($update->message->text == '/compilelinux'|| '/compilelinux@sperocoinbot') //Comando "/compilelinux" que retorna um texto explicativo de como instalar a Wallet em sistemas baseados em Linux
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
