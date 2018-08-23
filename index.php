@@ -106,7 +106,7 @@ $update = json_decode(file_get_contents('php://input'));
 
 //your app
 try {
-    if($update->message->text == '/start'|| '/start@sperocoinbot') //Comando "/start" que retorna os todos os comando do bot ao iniciá-lo pela primeira vez
+    if($update->message->text == '/start') //Comando "/start" que retorna os todos os comando do bot ao iniciá-lo pela primeira vez
     {
         $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
         $response = $client->sendMessage([
