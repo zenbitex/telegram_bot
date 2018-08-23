@@ -112,18 +112,18 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => "
-                        📖 List of commands:\n
-                        /status -> Get latest status \n
-                        /price -> Get price in BTC, USD, BRL \n
-                        /info -> Technical information \n
-                        /social -> Shows the social networks of Spero \n
-                        /email -> Get email address of the owner \n
-                        /commands -> Shows list of available commands \n
-                        /apk -> Download Apk Android(WebWallet Based) \n
-                        /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
-                        /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
-                        /compilelinux -> Compile Yourself Spero Code
-                     "
+📖 List of commands:\n
+    /status -> Get latest status \n
+    /price -> Get price in BTC, USD, BRL \n
+    /info -> Technical information \n
+    /social -> Shows the social networks of Spero \n
+    /email -> Get email address of the owner \n
+    /commands -> Shows list of available commands \n
+    /apk -> Download Apk Android(WebWallet Based) \n
+    /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
+    /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
+    /compilelinux -> Compile Yourself Spero Code
+ "
             ]);
 
     }
@@ -133,8 +133,8 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => "
-                        📝 You can send email to : sperocoin@gmail.com
-                      "
+    📝 You can send email to : sperocoin@gmail.com
+  "
         ]);
     }
     else if($update->message->text == '/commands'|| $update->message->text == '/commands@sperocoinbot') //Comando "/commands" que retorna todos os comandos do bot
@@ -143,18 +143,18 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => "
-                        📖 List of commands:\n
-                        /status -> Get latest status \n
-                        /price -> Get price in BTC, USD, BRL \n
-                        /info -> Technical information \n
-                        /social -> Shows the social networks of Spero \n
-                        /email -> Get email address of the owner \n
-                        /commands -> Shows list of available commands \n
-                        /apk -> Download Apk Android(WebWallet Based) \n
-                        /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
-                        /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
-                        /compilelinux -> Compile Yourself Spero Code
-                      "
+📖 List of commands:\n
+    /status -> Get latest status \n
+    /price -> Get price in BTC, USD, BRL \n
+    /info -> Technical information \n
+    /social -> Shows the social networks of Spero \n
+    /email -> Get email address of the owner \n
+    /commands -> Shows list of available commands \n
+    /apk -> Download Apk Android(WebWallet Based) \n
+    /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
+    /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
+    /compilelinux -> Compile Yourself Spero Code
+  "
             ]);
 
     }
@@ -164,17 +164,17 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            📊 Here are the status of the Spero network: \n
-                            👝 Version: ".$$api_info." \n
-                            👝 Protocol:".$$api_info2." \n
-                            👝 Wallet Version: ".$$api_info3." \n
-                            🔰 We are on the block: ".$api_blockcount." \n
-                            🔨 Mining Difficulty \n
-                                PoW: ".$api_getdifficulty." \n
-                                PoS: ".$api_getdifficulty2." \n
-                            💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n
-                            🔀 Network (MH/s): ".$api_getmininginfo."\n
-                            🔄 Pos Weight: ".$api_be_getmininginfo_pos
+📊 Here are the status of the Spero network: \n
+    👝 Version: ".$api_info." \n
+    👝 Protocol:".$api_info2." \n
+    👝 Wallet Version: ".$api_info3." \n
+🔰 We are on the block: ".$api_blockcount." \n
+🔨 Mining Difficulty \n
+    PoW: ".$api_getdifficulty." \n
+    PoS: ".$api_getdifficulty2." \n
+💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n
+🔀 Network (MH/s): ".$api_getmininginfo."\n
+🔄 Pos Weight: ".$api_be_getmininginfo_pos
                 ]);
 
     }
@@ -184,13 +184,13 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            💵 Price: \n
-                                BRL: ".number_format($fase03, 3, ',', '.')." \n
-                                BTC: ".number_format($calc_fase03_btc, 9, '.', ',')." \n
-                                DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n
-                                \n
-                                Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange
-                          "
+💵 Price: \n
+    BRL: ".number_format($fase03, 3, ',', '.')." \n
+    BTC: ".number_format($calc_fase03_btc, 9, '.', ',')." \n
+    DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n
+\n
+Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange
+      "
                 ]);
 
     }
@@ -200,20 +200,20 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            General information: \n
-                                Algorithm: X13 \n
-                                Total currencies: 7 million \n
-                                Block Time: 60 seconds \n
-                                PoS Return: 25% per year \n
-                                Difficulty reset to each block \n
-                                100000 pre-mined coins \n
-                                \n
-                            Mining Phases:\n
-                                Proof of Work + Proof of Stake: 0 - 33331 \n
-                                Proof of Stake: 33332 - 263250 \n
-                                Proof of Work + Proof of Stake: up to 263251 \n
-                            🔰 We are on the block: ".$api_blockcount."
-                            "
+General information: \n
+Algorithm: X13 \n
+Total currencies: 7 million \n
+Block Time: 60 seconds \n
+PoS Return: 25% per year \n
+Difficulty reset to each block \n
+100000 pre-mined coins \n
+\n
+Mining Phases:\n
+    Proof of Work + Proof of Stake: 0 - 33331 \n
+    Proof of Stake: 33332 - 263250 \n
+    Proof of Work + Proof of Stake: up to 263251 \n
+🔰 We are on the block: ".$api_blockcount."
+        "
                 ]);
 
     }
@@ -223,15 +223,15 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            Spero social networks \n
-                            Facebook: https://www.facebook.com/sperocoinofficial/ \n
-                            Slack: http://sperocoin.slack.com/ \n
-                            Telegram: https://t.me/sperocoin_official \n
-                            Discord: https://discord.gg/zAMNCZj \n
-                            Trello: https://trello.com/b/jYZvXKDs/sperocoin \n
-                            Channel in Telegram: https://t.me/sperocoin_channel/
-                          "
-                ]);
+Spero social networks \n
+    Facebook: https://www.facebook.com/sperocoinofficial/ \n
+    Slack: http://sperocoin.slack.com/ \n
+    Telegram: https://t.me/sperocoin_official \n
+    Discord: https://discord.gg/zAMNCZj \n
+    Trello: https://trello.com/b/jYZvXKDs/sperocoin \n
+    Channel in Telegram: https://t.me/sperocoin_channel/
+      "
+            ]);
 
     }
     else if($update->message->text == '/apk'|| $update->message->text == '/apk@sperocoinbot') //Comando "/apk" que retorna o link para download da Wallet SperoCoin para dispositivos móveis
@@ -240,9 +240,9 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            Download External Link: https://sperocoin.ddns.net/files/SperoCoin-v1.1BETA.apk \n
-                            Download From Channel in Telegram: https://t.me/sperocoin_channel/8
-                          "
+Download External Link: https://sperocoin.ddns.net/files/SperoCoin-v1.1BETA.apk \n
+Download From Channel in Telegram: https://t.me/sperocoin_channel/8
+      "
                 ]);
 
     }
@@ -252,9 +252,9 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            Download External Link: https://drive.google.com/open?id=19iKufDG64tKhjLiLtL6CIJ9t4Q2JEJ9f \n
-                            Download From Channel in Telegram: https://t.me/sperocoin_official/2745
-                          "
+Download External Link: https://drive.google.com/open?id=19iKufDG64tKhjLiLtL6CIJ9t4Q2JEJ9f \n
+Download From Channel in Telegram: https://t.me/sperocoin_official/2745
+      "
                 ]);
 
     }
@@ -264,9 +264,9 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-                            Download External Link: https://drive.google.com/open?id=1C1NWAABujE0KHHt3JJigm7ol9IaTva7J \n
-                            Download From Channel in Telegram: https://t.me/sperocoin_official/2743
-                          "
+Download External Link: https://drive.google.com/open?id=1C1NWAABujE0KHHt3JJigm7ol9IaTva7J \n
+Download From Channel in Telegram: https://t.me/sperocoin_official/2743
+      "
                 ]);
 
     }
@@ -275,25 +275,20 @@ try {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
-                'text' => '
-                            Download and install the dependencies:  \n
-                            sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev qt-sdk libminiupnpc-dev qrencode libqrencode-dev git libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils
-                             \n \n
-                            Clone the github source code for the local machine: \n
-                            git clone https://github.com/DigitalCoin1/DigitalCoinBRL
-                             \n \n
-                            Compile the daemon in the DigitalCoinBRL/src directory: \n
-                            cd DigitalCoinBRL/src \n
-                            make -f makefile.unix USE_UPNP=- USE_IPV6=1
-                             \n \n
-                            Run daemon in the DigitalCoinBRL/src directory: \n
-                            ./SperoCoind
-                             \n \n
-                            [OPTIONAL]Compile the QT in the DigitalCoinBRL directory: \n
-                            sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev \n
-                            qmake SperoCoin-qt.pro "USE_UPNP=-" "USE_QRCODE=1" \n
-                            make -f Makefile
-                          '
+                'text' => "
+Download and install the dependencies:  \n
+    sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev qt-sdk libminiupnpc-dev qrencode libqrencode-dev git libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils
+ \n \n
+Clone the github source code for the local machine: \n
+    git clone https://github.com/DigitalCoin1/DigitalCoinBRL
+ \n \n
+Compile the daemon in the DigitalCoinBRL/src directory: \n
+    cd DigitalCoinBRL/src \n
+    make -f makefile.unix USE_UPNP=- USE_IPV6=1
+ \n \n
+Run daemon in the DigitalCoinBRL/src directory: \n
+    ./SperoCoind
+      "
                 ]);
 
     }
