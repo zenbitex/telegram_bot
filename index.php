@@ -143,16 +143,16 @@ try {
         $response = $client->sendMessage([
             'chat_id' => $update->message->chat->id,
             'text' => "
-📖 List of commands:\n
-    /status -> Get latest status \n
-    /price -> Get price in BTC, USD, BRL \n
-    /info -> Technical information \n
-    /social -> Shows the social networks of Spero \n
-    /email -> Get email address of the owner \n
-    /commands -> Shows list of available commands \n
-    /apk -> Download Apk Android(WebWallet Based) \n
-    /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
-    /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
+📖 List of commands:
+    /status -> Get latest status
+    /price -> Get price in BTC, USD, BRL
+    /info -> Technical information
+    /social -> Shows the social networks of Spero
+    /email -> Get email address of the owner
+    /commands -> Shows list of available commands
+    /apk -> Download Apk Android(WebWallet Based)
+    /walletwindowsqt -> Download the latest version of QT wallet for Windows
+    /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows
     /compilelinux -> Compile Yourself Spero Code
   "
             ]);
@@ -164,16 +164,16 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-📊 Here are the status of the Spero network: \n
-    👝 Version: ".$api_info." \n
-    👝 Protocol:".$api_info2." \n
-    👝 Wallet Version: ".$api_info3." \n
-🔰 We are on the block: ".$api_blockcount." \n
-🔨 Mining Difficulty \n
-    PoW: ".$api_getdifficulty." \n
-    PoS: ".$api_getdifficulty2." \n
-💰 Total coins distributed: ".$api_getmoneysupply." SPERO's \n
-🔀 Network (MH/s): ".$api_getmininginfo."\n
+📊 Here are the status of the Spero network:
+    👝 Version: ".$api_info."
+    👝 Protocol:".$api_info2."
+    👝 Wallet Version: ".$api_info3."
+🔰 We are on the block: ".$api_blockcount."
+🔨 Mining Difficulty
+    PoW: ".$api_getdifficulty."
+    PoS: ".$api_getdifficulty2."
+💰 Total coins distributed: ".$api_getmoneysupply." SPERO's
+🔀 Network (MH/s): ".$api_getmininginfo."
 🔄 Pos Weight: ".$api_be_getmininginfo_pos
                 ]);
 
@@ -184,11 +184,11 @@ try {
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-💵 Price: \n
-    BRL: ".number_format($fase03, 3, ',', '.')." \n
-    BTC: ".number_format($calc_fase03_btc, 9, '.', ',')." \n
-    DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."\n
-\n
+💵 Price:
+    BRL: ".number_format($fase03, 3, ',', '.')."
+    BTC: ".number_format($calc_fase03_btc, 9, '.', ',')."
+    DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."
+
 Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange
       "
                 ]);
@@ -200,18 +200,18 @@ Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-General information: \n
-Algorithm: X13 \n
-Total currencies: 7 million \n
-Block Time: 60 seconds \n
-PoS Return: 25% per year \n
-Difficulty reset to each block \n
-100000 pre-mined coins \n
-\n
-Mining Phases:\n
-    Proof of Work + Proof of Stake: 0 - 33331 \n
-    Proof of Stake: 33332 - 263250 \n
-    Proof of Work + Proof of Stake: up to 263251 \n
+General information:
+Algorithm: X13
+Total currencies: 7 million
+Block Time: 60 seconds
+PoS Return: 25% per year
+Difficulty reset to each block
+100000 pre-mined coins
+
+Mining Phases:
+    Proof of Work + Proof of Stake: 0 - 33331
+    Proof of Stake: 33332 - 263250
+    Proof of Work + Proof of Stake: up to 263251
 🔰 We are on the block: ".$api_blockcount."
         "
                 ]);
@@ -223,12 +223,12 @@ Mining Phases:\n
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Spero social networks \n
-    Facebook: https://www.facebook.com/sperocoinofficial/ \n
-    Slack: http://sperocoin.slack.com/ \n
-    Telegram: https://t.me/sperocoin_official \n
-    Discord: https://discord.gg/zAMNCZj \n
-    Trello: https://trello.com/b/jYZvXKDs/sperocoin \n
+Spero social networks
+    Facebook: https://www.facebook.com/sperocoinofficial/
+    Slack: http://sperocoin.slack.com/
+    Telegram: https://t.me/sperocoin_official
+    Discord: https://discord.gg/zAMNCZj
+    Trello: https://trello.com/b/jYZvXKDs/sperocoin
     Channel in Telegram: https://t.me/sperocoin_channel/
       "
             ]);
@@ -240,7 +240,7 @@ Spero social networks \n
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Download External Link: https://sperocoin.ddns.net/files/SperoCoin-v1.1BETA.apk \n
+Download External Link: https://sperocoin.ddns.net/files/SperoCoin-v1.1BETA.apk
 Download From Channel in Telegram: https://t.me/sperocoin_channel/8
       "
                 ]);
@@ -252,7 +252,7 @@ Download From Channel in Telegram: https://t.me/sperocoin_channel/8
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Download External Link: https://drive.google.com/open?id=19iKufDG64tKhjLiLtL6CIJ9t4Q2JEJ9f \n
+Download External Link: https://drive.google.com/open?id=19iKufDG64tKhjLiLtL6CIJ9t4Q2JEJ9f
 Download From Channel in Telegram: https://t.me/sperocoin_official/2745
       "
                 ]);
@@ -264,7 +264,7 @@ Download From Channel in Telegram: https://t.me/sperocoin_official/2745
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Download External Link: https://drive.google.com/open?id=1C1NWAABujE0KHHt3JJigm7ol9IaTva7J \n
+Download External Link: https://drive.google.com/open?id=1C1NWAABujE0KHHt3JJigm7ol9IaTva7J
 Download From Channel in Telegram: https://t.me/sperocoin_official/2743
       "
                 ]);
@@ -276,17 +276,17 @@ Download From Channel in Telegram: https://t.me/sperocoin_official/2743
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Download and install the dependencies:  \n
+Download and install the dependencies:
     sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev qt-sdk libminiupnpc-dev qrencode libqrencode-dev git libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils
- \n \n
-Clone the github source code for the local machine: \n
+
+Clone the github source code for the local machine:
     git clone https://github.com/DigitalCoin1/DigitalCoinBRL
- \n \n
-Compile the daemon in the DigitalCoinBRL/src directory: \n
-    cd DigitalCoinBRL/src \n
+
+Compile the daemon in the DigitalCoinBRL/src directory:
+    cd DigitalCoinBRL/src
     make -f makefile.unix USE_UPNP=- USE_IPV6=1
- \n \n
-Run daemon in the DigitalCoinBRL/src directory: \n
+
+Run daemon in the DigitalCoinBRL/src directory:
     ./SperoCoind
       "
                 ]);
@@ -302,7 +302,7 @@ Run daemon in the DigitalCoinBRL/src directory: \n
 
     }
 
-} catch (\Zelenin\Telegram\Bot\NotOkException $e) {
+} catch (\Zelenin\Telegram\BototOkException $e) {
 
     //echo error message ot log it
     //echo $e->getMessage();
