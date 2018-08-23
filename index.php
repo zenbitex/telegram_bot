@@ -19,13 +19,18 @@
 */
 require 'vendor/autoload.php';
 
-$client = new Zelenin\Telegram\Bot\Api('503037693:AAGA8Jjmv4DXfQI3RVfgGgS2eLRProDqMFA');
+$client = new Zelenin\Telegram\Bot\Api('503037693:AAHwo5O_meCj-5Q68KeQ0lKQIDAL90dF6CM');
 
 //BLOCK EXPLORER
 $be_blockcount = 'http://35.198.22.94:3001/api/getblockcount'; // BLOCK COUNT
 $be_blockcount_api = json_decode(file_get_contents($be_blockcount), true);
 $api_blockcount = $be_blockcount_api;
 
+$be_info = 'http://35.198.22.94:3001/api/getinfo'; // GETINFO
+$be_info_api = json_decode(file_get_contents($be_info), true);
+$api_info = $be_info_api['version'];
+$api_info2 = $be_info_api['protocolversion'];
+$api_info3 = $be_info_api['walletversion'];
 
 $be_getdifficulty = 'http://35.198.22.94:3001/api/getdifficulty'; // GET DIFFICULTY POW
 $be_getdifficulty_api = json_decode(file_get_contents($be_getdifficulty), true);
@@ -113,27 +118,31 @@ try {
                         /info -> Technical information \n
                         /social -> Shows the social networks of Spero \n
                         /email -> Get email address of the owner \n
-                        /commands -> Shows list of available commands
+                        /commands -> Shows list of available commands \n
+                        /apk -> Download Apk Android(WebWallet Based) \n
+                        /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
+                        /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
+                        /compilelinux -> Compile Yourself Spero Code
                      "
             ]);
 
     }
-    else if($update->message->text == '/email') //Comando "/email" que retorna o(s) e-mail('s) da Foundation SperoCoin
+    else if($update->message->text == '/email'|| '/email@sperocoinbot') //Comando "/email" que retorna o(s) e-mail('s) da Foundation SperoCoin
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-        	'chat_id' => $update->message->chat->id,
-        	'text' => "
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => "
                         📝 You can send email to : sperocoin@gmail.com
                       "
-     	]);
+        ]);
     }
-    else if($update->message->text == '/commands') //Comando "/commands" que retorna todos os comandos do bot
+    else if($update->message->text == '/commands'|| '/commands@sperocoinbot') //Comando "/commands" que retorna todos os comandos do bot
     {
-    	$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "
+        $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => "
                         📖 List of commands:\n
                         /status -> Get latest status \n
                         /price -> Get price in BTC, USD, BRL \n
@@ -141,18 +150,24 @@ try {
                         /social -> Shows the social networks of Spero \n
                         /email -> Get email address of the owner \n
                         /commands -> Shows list of available commands \n
-                        /apk -> Download Apk Android(WebWallet Based)
+                        /apk -> Download Apk Android(WebWallet Based) \n
+                        /walletwindowsqt -> Download the latest version of QT wallet for Windows \n
+                        /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows \n
+                        /compilelinux -> Compile Yourself Spero Code
                       "
-    		]);
+            ]);
 
     }
-    else if($update->message->text == '/status') //Comando "/status" que retorna o status atual da rede SperoCoin
+    else if($update->message->text == '/status'|| '/status@sperocoinbot') //Comando "/status" que retorna o status atual da rede SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
                             📊 Here are the status of the Spero network: \n
+                            👝 Version: ".$$api_info." \n
+                            👝 Protocol:".$$api_info2." \n
+                            👝 Wallet Version: ".$$api_info3." \n
                             🔰 We are on the block: ".$api_blockcount." \n
                             🔨 Mining Difficulty \n
                                 PoW: ".$api_getdifficulty." \n
@@ -161,10 +176,10 @@ try {
                             🔀 Network (MH/s): ".$api_getmininginfo."\n
                             🔄 Pos Weight: ".$api_be_getmininginfo_pos"
                           "
-				]);
+                ]);
 
     }
-    else if($update->message->text == '/price') //Comando "/price" que retorna os valores em diversas moedas de acordo com as exchanges que negociam a SperoCoin
+    else if($update->message->text == '/price'|| '/price@sperocoinbot') //Comando "/price" que retorna os valores em diversas moedas de acordo com as exchanges que negociam a SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -180,7 +195,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/info') //Comando "/info" que retorna as informações gerais e técnicas da SperoCoin
+    else if($update->message->text == '/info'|| '/info@sperocoinbot') //Comando "/info" que retorna as informações gerais e técnicas da SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -203,7 +218,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/social') //Comando "/social" que retorna todas as redes sociais da SperoCoin
+    else if($update->message->text == '/social'|| '/social@sperocoinbot') //Comando "/social" que retorna todas as redes sociais da SperoCoin
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -220,7 +235,7 @@ try {
                 ]);
 
     }
-    else if($update->message->text == '/apk') //Comando "/apk" que retorna o link para download da Wallet SperoCoin para dispositivos móveis
+    else if($update->message->text == '/apk'|| '/apk@sperocoinbot') //Comando "/apk" que retorna o link para download da Wallet SperoCoin para dispositivos móveis
     {
             $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
             $response = $client->sendMessage([
@@ -232,13 +247,64 @@ try {
                 ]);
 
     }
+    else if($update->message->text == '/walletwindowsqt'|| '/walletwindowsqt@sperocoinbot') //Comando "/walletwindowsqt" que retorna o link para download da QT Wallet SperoCoin para Windows
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+                            Download External Link: https://drive.google.com/open?id=19iKufDG64tKhjLiLtL6CIJ9t4Q2JEJ9f \n
+                            Download From Channel in Telegram: https://t.me/sperocoin_official/2745
+                          "
+                ]);
+
+    }
+    else if($update->message->text == '/walletwindowsdaemon'|| '/walletwindowsdaemon@sperocoinbot') //Comando "/walletwindowsdaemon" que retorna o link para download da Wallet daemon SperoCoin para Windows
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+                            Download External Link: https://drive.google.com/open?id=1C1NWAABujE0KHHt3JJigm7ol9IaTva7J \n
+                            Download From Channel in Telegram: https://t.me/sperocoin_official/2743
+                          "
+                ]);
+
+    }
+    else if($update->message->text == '/compilelinux'|| '/compilelinux@sperocoinbot') //Comando "/compilelinux" que retorna um texto explicativo de como instalar a Wallet em sistemas baseados em Linux
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => '
+                            Download and install the dependencies:  \n
+                            sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev qt-sdk libminiupnpc-dev qrencode libqrencode-dev git libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils
+                             \n \n
+                            Clone the github source code for the local machine: \n
+                            git clone https://github.com/DigitalCoin1/DigitalCoinBRL
+                             \n \n
+                            Compile the daemon in the DigitalCoinBRL/src directory: \n
+                            cd DigitalCoinBRL/src \n
+                            make -f makefile.unix USE_UPNP=- USE_IPV6=1
+                             \n \n
+                            Run daemon in the DigitalCoinBRL/src directory: \n
+                            ./SperoCoind
+                             \n \n
+                            [OPTIONAL]Compile the QT in the DigitalCoinBRL directory: \n
+                            sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler libqrencode-dev \n
+                            qmake SperoCoin-qt.pro "USE_UPNP=-" "USE_QRCODE=1" \n
+                            make -f Makefile
+                          '
+                ]);
+
+    }
     else
     {
-    	/*$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
-    	$response = $client->sendMessage([
-    		'chat_id' => $update->message->chat->id,
-    		'text' => "Invalid command, please use /commands to get list of available commands"
-    		]);*/
+        /*$response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+        $response = $client->sendMessage([
+            'chat_id' => $update->message->chat->id,
+            'text' => "Invalid command, please use /commands to get list of available commands"
+            ]);*/
 
     }
 
