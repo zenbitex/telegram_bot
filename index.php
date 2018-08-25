@@ -194,18 +194,20 @@ try {
                 'chat_id' => $update->message->chat->id,
                 'text' => "
 💵 Price:
+Cotação/Price: Exchange Official:
     BRL: ".number_format($fase03, 3, ',', '.')."
     BTC: ".number_format($calc_fase03_btc, 9, '.', ',')."
     DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."
 
-Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange
+https://sperocoin.ddns.net/exchange
 
+Cotação/Price: Altilly
     BRL: ".number_format($latest_price_spero, 3, ',', '.')."
     ETH: ".number_format($latest_price_spero_eth, 9, ',', '.')."
     DOGE: ".number_format($latest_price_spero_doge, 9, ',', '.')."
     BTC: ".number_format($latest_price_spero_btc, 9, ',', '.')."
 
-Cotação/Price: Altilly - https://altilly.com
+https://altilly.com
       "
                 ]);
 
