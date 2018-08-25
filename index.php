@@ -84,6 +84,14 @@ $latest_price_spero = $result_spero_current['brl'];
 $latest_price_spero_eth = $result_spero_current['eth'];
 $latest_price_spero_btc = $result_spero_current['btc'];
 $latest_price_spero_doge = $latest_price_spero / $latest_pricedoge;
+//MARKETCAP
+$marketcap = $result_spero_market['market_cap'];
+$mktcap = $marketcap['brl'];
+//24 HOUR TRADING VOL
+$vol = $result_spero_market['total_volume'];
+$vol_trading = $vol ['brl'];
+
+
 //FASES
 $fase01 = 0.03; // R$0,03
 $fase02 = 0.05; // R$0,05
@@ -208,6 +216,10 @@ Cotação/Price: Altilly
     BTC: ".number_format($latest_price_spero_btc, 9, ',', '.')."
 
 https://altilly.com
+
+Market Cap: BRL: ".number_format($mktcap, 2, ',', '.')."
+24 Hour Trading Volume: BRL: ".number_format($vol_trading, 2, ',', '.')."
+Fonte: https://www.coingecko.com/en/coins/sperocoin
       "
                 ]);
 
