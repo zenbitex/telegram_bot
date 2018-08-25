@@ -73,8 +73,17 @@ $result_doge_dolar2 = $result_doge_dolar['current_price'];
 //LAST PRICE BRL
 $latest_pricedoge = $result_doge_dolar2['brl'];
 
-
-
+//FUNCTION SPERO
+$api_spero = "https://api.coingecko.com/api/v3/coins/sperocoin";
+$union_api_spero = json_decode(file_get_contents($api_spero), true);
+//DOGE_USD
+$result_spero_market = $union_api_spero['market_data'];
+$result_spero_current = $result_spero_market['current_price'];
+//LAST PRICE BRL
+$latest_price_spero = $result_spero_current['brl'];
+$latest_price_spero_eth = $result_spero_current['eth'];
+$latest_price_spero_btc = $result_spero_current['btc'];
+$latest_price_spero_doge = $latest_price_spero / $latest_pricedoge;
 //FASES
 $fase01 = 0.03; // R$0,03
 $fase02 = 0.05; // R$0,05
@@ -190,6 +199,13 @@ try {
     DOGE: ".number_format($calc_fase03_doge, 9, '.', ',')."
 
 Cotação/Price: Exchange Official - https://sperocoin.ddns.net/exchange
+
+    BRL: ".number_format($latest_price_spero, 3, ',', '.')."
+    ETH: ".number_format($latest_price_spero_eth, 9, ',', '.')."
+    DOGE: ".number_format($latest_price_spero_doge, 9, ',', '.')."
+    BTC: ".number_format($latest_price_spero_btc, 9, ',', '.')."
+
+Cotação/Price: Altilly - https://altilly.com
       "
                 ]);
 
