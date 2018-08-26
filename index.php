@@ -270,8 +270,8 @@ Spero social networks
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Download External Link: https://sperocoin.ddns.net/files/SperoCoin-v1.1BETA.apk
-Download From Channel in Telegram: https://t.me/sperocoin_channel/8
+Download External Link: https://drive.google.com/open?id=1MqVX9DgHTyK9bMKZZLCvM2fspUr8dHf0
+Download From Channel in Telegram: https://t.me/sperocoin_channel/204
       "
                 ]);
 
