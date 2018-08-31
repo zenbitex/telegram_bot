@@ -92,9 +92,9 @@ $vol = $result_spero_market['total_volume'];
 $vol_trading = $vol ['brl'];
 
 //PERCENTUAL DE VENDA
-$perc_venda = 3.00;
+$perc_venda = 1.5;
 //PERCENTUAL DE COMPRA
-$perc_compra = 1.50;
+$perc_compra = 0.05;
 
 //PREÇO DE VENDA
 $preco_venda_reais = $latest_price_spero - ($latest_price_spero / 100 * $perc_venda);
