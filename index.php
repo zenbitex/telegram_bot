@@ -92,9 +92,9 @@ $vol = $result_spero_market['total_volume'];
 $vol_trading = $vol ['brl'];
 
 //PERCENTUAL DE VENDA
-$perc_venda = 1.5;
+$perc_venda = 0.05;
 //PERCENTUAL DE COMPRA
-$perc_compra = 0.05;
+$perc_compra = 0.10;
 
 //PREÇO DE VENDA
 $preco_venda_reais = $latest_price_spero - ($latest_price_spero / 100 * $perc_venda);
@@ -107,6 +107,23 @@ $preco_compra_reais = $latest_price_spero + ($latest_price_spero / 100 * $perc_c
 $preco_compra_btc = $latest_price_spero_btc + ($latest_price_spero_btc / 100 * $perc_compra);
 $preco_compra_eth = $latest_price_spero_eth + ($latest_price_spero_eth / 100 * $perc_compra);
 $preco_compra_doge = $latest_price_spero_doge + ($latest_price_spero_doge / 100 * $perc_compra);
+
+//ENDEREÇO BTC
+$address_btc = "https://blockchain.info/q/addressbalance/1EgizD93DWefuMi3JdXg5Rk4CM9acB8Uac";
+$address_btc_api = json_decode(file_get_contents($address_btc), true);
+$btc_balance = $address_btc_api;
+
+//ENDEREÇO ETH
+$address_eth = "http://api.ethplorer.io/getAddressInfo/0x2782128fdd8c61005c6abad2925abe68f1325707?apiKey=freekey";
+$address_eth_api = json_decode(file_get_contents($address_eth), true);
+$eth_api = $address_eth_api['ETH'];
+$eth_balance = $eth_api['balance'];
+
+//ENDEREÇO DOGE
+$address_doge = "https://chain.so/api/v2/get_address_balance/DOGE/DNEfNPU771yMzBFQrortJQB1Wyi33S2inm/50";
+$address_doge_api = json_decode(file_get_contents($address_doge), true);
+$doge_api = $address_doge_api['data'];
+$doge_balance = $doge_api['confirmed_balance'];
 
 $update = json_decode(file_get_contents('php://input'));
 
@@ -131,6 +148,7 @@ try {
     /compilelinux -> Compile Yourself Spero Code
     /p2pbuy - Buy ​​SperoCoin in P2P mode in a group on the Telegram
     /p2psell - Sell SperoCoin ​​in P2P mode in a group on the Telegram
+    /p2pbalance - Return all balances
  "
             ]);
 
@@ -164,6 +182,7 @@ try {
     /compilelinux -> Compile Yourself Spero Code
     /p2pbuy - Buy ​​SperoCoin in P2P mode in a group on the Telegram
     /p2psell - Sell SperoCoin ​​in P2P mode in a group on the Telegram
+    /p2pbalance - Return all balances
   "
             ]);
 
@@ -354,6 +373,25 @@ Run daemon in the SperoCoin/src directory:
 [RU] Чтобы купить в группе и принять участие в свободном маркетинге: https://t.me/sperocoinexchange
       "
                 ]);
+    }
+    else if($update->message->text == '/p2pbalance'|| $update->message->text == '/p2pbalance@sperocoinbot') //Comando "/p2pbalance" que retorna o saldo atual das wallets da Exchange P2P
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+REAIS(BRL): R$: 0,00
+BTC: ".number_format($btc_balance, 9, ',', '.')."
+ETH: ".number_format($eth_balance, 9, ',', '.')."
+DOGE: ".number_format($doge_balance, 9, ',', '.')."
+
+ADDRESS
+BTC: 1EgizD93DWefuMi3JdXg5Rk4CM9acB8Uac
+ETH: 0x2782128fdd8c61005c6abad2925abe68f1325707
+DOGE: DNEfNPU771yMzBFQrortJQB1Wyi33S2inm
+      "
+                ]);
+
     }
     else
     {
