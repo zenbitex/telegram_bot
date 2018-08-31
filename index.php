@@ -91,33 +91,22 @@ $mktcap = $marketcap['brl'];
 $vol = $result_spero_market['total_volume'];
 $vol_trading = $vol ['brl'];
 
+//PERCENTUAL DE VENDA
+$perc_venda = 3.00;
+//PERCENTUAL DE COMPRA
+$perc_compra = 1.50;
 
-//FASES
-$fase01 = 0.03; // R$0,03
-$fase02 = 0.05; // R$0,05
-$fase03 = 0.12; // R$0,12
-$fase04 = 0.25; // R$0,25
-$fase05 = 0.60; // R$0,60
+//PREÇO DE VENDA
+$preco_venda_reais = $latest_price_spero - ($latest_price_spero / 100 * $perc_venda);
+$preco_venda_btc = $latest_price_spero_btc - ($latest_price_spero_btc / 100 * $perc_venda);
+$preco_venda_eth = $latest_price_spero_eth - ($latest_price_spero_eth / 100 * $perc_venda);
+$preco_venda_doge = $latest_price_spero_doge - ($latest_price_spero_doge / 100 * $perc_venda);
 
-//FASE ATUAL
-$faseatual = $fase03;
-
-//CALULO DAS FASES
-//FASE 01
-$calc_fase01_btc = $fase01 / $latest_pricebtc;
-$calc_fase01_doge = $fase01 / $latest_pricedoge;
-//FASE 02
-$calc_fase02_btc = $fase02 / $latest_pricebtc;
-$calc_fase02_doge = $fase02 / $latest_pricedoge;
-//FASE 03
-$calc_fase03_btc = $fase03 / $latest_pricebtc;
-$calc_fase03_doge = $fase03 / $latest_pricedoge;
-//FASE 04
-$calc_fase04_btc = $fase04 / $latest_pricebtc;
-$calc_fase04_doge = $fase04 / $latest_pricedoge;
-//FASE 05
-$calc_fase05_btc = $fase05 / $latest_pricebtc;
-$calc_fase05_doge = $fase05 / $latest_pricedoge;
+//PREÇO DE COMPRA
+$preco_compra_reais = $latest_price_spero + ($latest_price_spero / 100 * $perc_compra);
+$preco_compra_btc = $latest_price_spero_btc + ($latest_price_spero_btc / 100 * $perc_compra);
+$preco_compra_eth = $latest_price_spero_eth + ($latest_price_spero_eth / 100 * $perc_compra);
+$preco_compra_doge = $latest_price_spero_doge + ($latest_price_spero_doge / 100 * $perc_compra);
 
 $update = json_decode(file_get_contents('php://input'));
 
