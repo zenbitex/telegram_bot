@@ -129,6 +129,8 @@ try {
     /walletwindowsqt -> Download the latest version of QT wallet for Windows
     /walletwindowsdaemon -> Download the latest version of daemon wallet for Windows
     /compilelinux -> Compile Yourself Spero Code
+    /p2pbuy - Buy ​​SperoCoin in P2P mode in a group on the Telegram
+    /p2psell - Sell SperoCoin ​​in P2P mode in a group on the Telegram
  "
             ]);
 
