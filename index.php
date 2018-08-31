@@ -91,33 +91,22 @@ $mktcap = $marketcap['brl'];
 $vol = $result_spero_market['total_volume'];
 $vol_trading = $vol ['brl'];
 
+//PERCENTUAL DE VENDA
+$perc_venda = 3.00;
+//PERCENTUAL DE COMPRA
+$perc_compra = 1.50;
 
-//FASES
-$fase01 = 0.03; // R$0,03
-$fase02 = 0.05; // R$0,05
-$fase03 = 0.12; // R$0,12
-$fase04 = 0.25; // R$0,25
-$fase05 = 0.60; // R$0,60
+//PREÇO DE VENDA
+$preco_venda_reais = $latest_price_spero - ($latest_price_spero / 100 * $perc_venda);
+$preco_venda_btc = $latest_price_spero_btc - ($latest_price_spero_btc / 100 * $perc_venda);
+$preco_venda_eth = $latest_price_spero_eth - ($latest_price_spero_eth / 100 * $perc_venda);
+$preco_venda_doge = $latest_price_spero_doge - ($latest_price_spero_doge / 100 * $perc_venda);
 
-//FASE ATUAL
-$faseatual = $fase03;
-
-//CALULO DAS FASES
-//FASE 01
-$calc_fase01_btc = $fase01 / $latest_pricebtc;
-$calc_fase01_doge = $fase01 / $latest_pricedoge;
-//FASE 02
-$calc_fase02_btc = $fase02 / $latest_pricebtc;
-$calc_fase02_doge = $fase02 / $latest_pricedoge;
-//FASE 03
-$calc_fase03_btc = $fase03 / $latest_pricebtc;
-$calc_fase03_doge = $fase03 / $latest_pricedoge;
-//FASE 04
-$calc_fase04_btc = $fase04 / $latest_pricebtc;
-$calc_fase04_doge = $fase04 / $latest_pricedoge;
-//FASE 05
-$calc_fase05_btc = $fase05 / $latest_pricebtc;
-$calc_fase05_doge = $fase05 / $latest_pricedoge;
+//PREÇO DE COMPRA
+$preco_compra_reais = $latest_price_spero + ($latest_price_spero / 100 * $perc_compra);
+$preco_compra_btc = $latest_price_spero_btc + ($latest_price_spero_btc / 100 * $perc_compra);
+$preco_compra_eth = $latest_price_spero_eth + ($latest_price_spero_eth / 100 * $perc_compra);
+$preco_compra_doge = $latest_price_spero_doge + ($latest_price_spero_doge / 100 * $perc_compra);
 
 $update = json_decode(file_get_contents('php://input'));
 
@@ -303,17 +292,64 @@ Download and install the dependencies:
     sudo apt-get install build-essential libboost-all-dev libcurl4-openssl-dev libdb5.3-dev libdb5.3++-dev qt-sdk libminiupnpc-dev qrencode libqrencode-dev git libtool automake autotools-dev autoconf pkg-config libssl-dev libgmp3-dev libevent-dev bsdmainutils
 
 Clone the github source code for the local machine:
-    git clone https://github.com/DigitalCoin1/DigitalCoinBRL
+    git clone https://github.com/DigitalCoin1/SperoCoin
 
-Compile the daemon in the DigitalCoinBRL/src directory:
-    cd DigitalCoinBRL/src
+Compile the daemon in the SperoCoin/src directory:
+    cd SperoCoin/src
     make -f makefile.unix USE_UPNP=- USE_IPV6=1
 
-Run daemon in the DigitalCoinBRL/src directory:
+Run daemon in the SperoCoin/src directory:
     ./SperoCoind
       "
                 ]);
+    }
+    else if($update->message->text == '/p2pbuy'|| $update->message->text == '/p2pbuy@sperocoinbot') //Comando "/p2pbuy" que retorna um texto explicativo de como comprar no grupo P2P no Telegram
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+[PT] A SperoCoin pode ser comprada no modo P2P oficialmente pelos seguintes preços:
+[EN] SperoCoin can be purchased in P2P mode officially for the following prices:
+[ES] SperoCoin se puede comprar en el modo P2P oficialmente por los siguientes precios:
+[CH] SperoCoin可以以P2P模式正式購買，價格如下：
+[RU] SperoCoin можно приобрести в режиме P2P официально по следующим ценам:
+    REAIS(BRL): R$ ".number_format($preco_venda_reais, 2, ',', '.')."
+    BTC: ".number_format($preco_venda_btc, 8, ',', '.')."
+    ETH: ".number_format($preco_venda_eth, 8, ',', '.')."
+    DOGE: ".number_format($preco_venda_doge, 8, ',', '.')."
 
+[PT] Para comprar entre no grupo e participe da comercialização livre:https://t.me/sperocoinexchange
+[EN] To buy in the group and participate in the free marketing: https://t.me/sperocoinexchange
+[ES] Para comprar entre en el grupo y participar en la comercialización libre: https://t.me/sperocoinexchange
+[CH] 在團體中購買並參與免費營銷： https://t.me/sperocoinexchange
+[RU] Чтобы купить в группе и принять участие в свободном маркетинге: https://t.me/sperocoinexchange
+      "
+                ]);
+    }
+    else if($update->message->text == '/p2psell'|| $update->message->text == '/p2psell@sperocoinbot') //Comando "/p2psell" que retorna um texto explicativo de como vender no grupo P2P no Telegram
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+[PT] A SperoCoin pode ser vendida no modo P2P oficialmente pelos seguintes preços:
+[EN] SperoCoin can be sold in P2P mode officially for the following prices:
+[ES] SperoCoin puede venderse en el modo P2P oficialmente por los siguientes precios:
+[CH] SperoCoin可以以P2P模式正式銷售，價格如下：
+[RU] SperoCoin может быть продан в режиме P2P официально по следующим ценам:
+    REAIS(BRL): R$ ".number_format($preco_compra_reais, 2, ',', '.')."
+    BTC: ".number_format($preco_compra_btc, 8, ',', '.')."
+    ETH: ".number_format($preco_compra_eth, 8, ',', '.')."
+    DOGE: ".number_format($preco_compra_doge, 8, ',', '.')."
+
+[PT] Para comprar entre no grupo e participe da comercialização livre:https://t.me/sperocoinexchange
+[EN] To buy in the group and participate in the free marketing: https://t.me/sperocoinexchange
+[ES] Para comprar entre en el grupo y participar en la comercialización libre: https://t.me/sperocoinexchange
+[CH] 在團體中購買並參與免費營銷： https://t.me/sperocoinexchange
+[RU] Чтобы купить в группе и принять участие в свободном маркетинге: https://t.me/sperocoinexchange
+      "
+                ]);
     }
     else
     {
