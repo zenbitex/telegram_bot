@@ -390,6 +390,9 @@ Run daemon in the SperoCoin/src directory:
 SPERO: ".number_format($spero_balance, 9, ',', '.')."
 
 REAIS(BRL): R$: 0,00
+MERCADOPAGO: R$ 0,00
+CELLCOIN: R$ 0,00
+
 BTC: ".number_format($btc_balance, 9, ',', '.')."
 ETH: ".number_format($eth_balance, 9, ',', '.')."
 DOGE: ".number_format($doge_balance, 9, ',', '.')."
@@ -398,6 +401,7 @@ ADDRESS
 BTC: 1EgizD93DWefuMi3JdXg5Rk4CM9acB8Uac
 ETH: 0x2782128fdd8c61005c6abad2925abe68f1325707
 DOGE: DNEfNPU771yMzBFQrortJQB1Wyi33S2inm
+MERCADOPAGO: sperocoin@gmail.com
       "
                 ]);
 
