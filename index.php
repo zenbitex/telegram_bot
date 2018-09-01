@@ -125,6 +125,11 @@ $address_doge_api = json_decode(file_get_contents($address_doge), true);
 $doge_api = $address_doge_api['data'];
 $doge_balance = $doge_api['confirmed_balance'];
 
+//ENDEREÇO SPERO
+$address_spero = "http://35.198.22.94:3001/ext/getbalance/SX2czsni9LUY8574eXQhsQnnz46ZU8r4sf";
+$address_spero_api = json_decode(file_get_contents($address_spero), true);
+$spero_balance = $address_spero_api;
+
 $update = json_decode(file_get_contents('php://input'));
 
 //your app
@@ -337,6 +342,7 @@ Run daemon in the SperoCoin/src directory:
 [ES] SperoCoin se puede comprar en el modo P2P oficialmente por los siguientes precios:
 [CH] SperoCoin可以以P2P模式正式購買，價格如下：
 [RU] SperoCoin можно приобрести в режиме P2P официально по следующим ценам:
+
     REAIS(BRL): R$ ".number_format($preco_venda_reais, 2, ',', '.')."
     BTC: ".number_format($preco_venda_btc, 8, ',', '.')."
     ETH: ".number_format($preco_venda_eth, 8, ',', '.')."
@@ -361,6 +367,7 @@ Run daemon in the SperoCoin/src directory:
 [ES] SperoCoin puede venderse en el modo P2P oficialmente por los siguientes precios:
 [CH] SperoCoin可以以P2P模式正式銷售，價格如下：
 [RU] SperoCoin может быть продан в режиме P2P официально по следующим ценам:
+
     REAIS(BRL): R$ ".number_format($preco_compra_reais, 2, ',', '.')."
     BTC: ".number_format($preco_compra_btc, 8, ',', '.')."
     ETH: ".number_format($preco_compra_eth, 8, ',', '.')."
@@ -380,6 +387,8 @@ Run daemon in the SperoCoin/src directory:
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
+SPERO: ".number_format($spero_balance, 9, ',', '.')."
+
 REAIS(BRL): R$: 0,00
 BTC: ".number_format($btc_balance, 9, ',', '.')."
 ETH: ".number_format($eth_balance, 9, ',', '.')."
