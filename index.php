@@ -154,6 +154,8 @@ try {
     /p2pbuy - Buy ​​SperoCoin in P2P mode in a group on the Telegram
     /p2psell - Sell SperoCoin ​​in P2P mode in a group on the Telegram
     /p2pbalance - Return all balances
+    /airdrop - See here all Airdrops that SPERO is performing
+    /bounties - Find here the rewards you can earn by performing tasks
  "
             ]);
 
@@ -188,6 +190,8 @@ try {
     /p2pbuy - Buy ​​SperoCoin in P2P mode in a group on the Telegram
     /p2psell - Sell SperoCoin ​​in P2P mode in a group on the Telegram
     /p2pbalance - Return all balances
+    /airdrop - See here all Airdrops that SPERO is performing
+    /bounties - Find here the rewards you can earn by performing tasks
   "
             ]);
 
@@ -402,6 +406,76 @@ BTC: 1EgizD93DWefuMi3JdXg5Rk4CM9acB8Uac
 ETH: 0x2782128fdd8c61005c6abad2925abe68f1325707
 DOGE: DNEfNPU771yMzBFQrortJQB1Wyi33S2inm
 MERCADOPAGO: sperocoin@gmail.com
+      "
+                ]);
+
+    }
+    else if($update->message->text == '/airdrop'|| $update->message->text == '/airdrop@sperocoinbot') //Comando "/airdrop" que retorna o todos os eventos de AIRDROP ativos
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+AIRDROP 01:
+AIRDROP AIODEX
+
+[PT-BR] Vote na Spero, deixe um comentário com seu endereço e ganhe 20 SPERO's!
+[EN] Vote for Spero, leave a comment with your address and get 20 SPERO's!
+[ES] Votar por Spero, deja un comentario con su dirección y obtener 20 SPERO de!
+[ZH-CN] 为Spero投票，在您的地址留下评论并获得20 SPERO！
+[RU] Проголосуйте за Spero, оставьте комментарий с вашим адресом и получите 20 SPERO!
+[IT] Vota per Spero, lascia un commento con il tuo indirizzo e ottieni 20 SPERO!
+[KO] Spero에 투표하십시오. 주소와 함께 의견을 남기고 20 개의 SPERO를 얻으십시오!
+[RO] Votați pentru Spero, lăsați un comentariu cu adresa dvs. și obțineți 20 SPERO!
+
+https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1 (https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1)
+
+AIRDROP 02:
+Airdrop SperoCoin this very moment!
+To participate simply enter our Telegram group and leave your wallet to deposit. Will be deposited 05 coins per user!
+Group:
+
+💬https://t.me/joinchat/G7cebkL3dbRqfuy1gVNm3g
+
+For those already in the group, just send your address, preferably Altilly's.
+
+Total number of participants: 20
+—————————————————————————————————————-
+Airdrop SperoCoin neste exato momento!
+Para participar basta entrar em nosso grupo do Telegram e deixar sua wallet para depósito. Serão depositados 05 moedas por usuário!
+Grupo:
+
+https://t.me/joinchat/G7cebkL3dbRqfuy1gVNm3g
+
+💬Pra quem já está no grupo, somente envie seu endereço, preferencialmente o da Altilly.
+
+Total de participantes: 20
+      "
+                ]);
+
+    }
+    else if($update->message->text == '/bounties'|| $update->message->text == '/bounties@sperocoinbot') //Comando "/bounties" que retorna todas as recompensas que a SPERO paga por cumprir tarefas
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+Wallet Android = 1000 SPERO
+Wallet IOS = 1000 SPERO
+Wallet MAC = 1000 SPERO
+Exchange = 10,000 SPERO - PAY TO COINSMARKETS
+3x Point of Exchange (Social Market) = 5,000
+
+Translate our official topic and win coins*!
+📣 BTCTalk: https://bitcointalk.org/index.php?topic=2260985.0
+Awards:
+BrandNew ou Newbie: 100 SPERO
+Jr. Member: 200 SPERO
+Member: 400 SPERO
+Full Member: 600 SPERO
+Sr. Member: 800 SPERO
+Hero ou Legendary: 1200 SPERO
+*Each verified user pays only one (01) fee!
       "
                 ]);
 
