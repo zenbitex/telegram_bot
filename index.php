@@ -429,6 +429,11 @@ AIRDROP AIODEX
 [RO] Votați pentru Spero, lăsați un comentariu cu adresa dvs. și obțineți 20 SPERO!
 
 https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1 (https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1)
+Payments AIRDROP 01:
+Otahumele Nicholas - dd00846139ae87bc36644436e80b41076a25c1107d62752af157db41998b9731
+Rock Star - 105ae5c1d193aab5aa1a0d1733a0c63a378fe8ab8ba97e6021203cca2441e7f2
+
+*******************************
 
 AIRDROP 02:
 Airdrop SperoCoin this very moment!
@@ -440,7 +445,7 @@ Group:
 For those already in the group, just send your address, preferably Altilly's.
 
 Total number of participants: 20
-—————————————————————————————————————-
+——————————————————————————————
 Airdrop SperoCoin neste exato momento!
 Para participar basta entrar em nosso grupo do Telegram e deixar sua wallet para depósito. Serão depositados 05 moedas por usuário!
 Grupo:
@@ -450,6 +455,9 @@ https://t.me/joinchat/G7cebkL3dbRqfuy1gVNm3g
 💬Pra quem já está no grupo, somente envie seu endereço, preferencialmente o da Altilly.
 
 Total de participantes: 20
+Payments AIRDROP 02:
+Otahumele Nicholas - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
+Rock Star - f704a4fb0274d68488082acfbd97a7d5df8a460e1171db280fa231382fd19730
       "
                 ]);
 
