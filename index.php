@@ -466,8 +466,8 @@ Wallet MAC = 1000 SPERO
 Exchange = 10,000 SPERO - PAY TO COINSMARKETS
 3x Point of Exchange (Social Market) = 5,000
 
-Translate our official topic and win coins*!
-📣 BTCTalk: https://bitcointalk.org/index.php?topic=2260985.0
+Translate our official topic and win coins!*
+📣 CODE BTCTALK: https://github.com/DigitalCoin1/BTCTALK/blob/master/Modelo-PT-BR.txt
 Awards:
 BrandNew ou Newbie: 100 SPERO
 Jr. Member: 200 SPERO
@@ -475,7 +475,12 @@ Member: 400 SPERO
 Full Member: 600 SPERO
 Sr. Member: 800 SPERO
 Hero ou Legendary: 1200 SPERO
-*Each verified user pays only one (01) fee!
+*Each verified user will receive only one (01) payment! We will not pay translations previously made available, stay up to date!
+
+Translations:
+Korean: https://bitcointalk.org/index.php?topic=2302789.0
+Russian: https://bitcointalk.org/index.php?topic=2315313.0
+Romanian: https://bitcointalk.org/index.php?topic=4601437.0
       "
                 ]);
 
