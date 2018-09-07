@@ -65,13 +65,10 @@ $latest_pricebtc = $result_bitcoin_dolar2['brl'];
 
 
 //FUNCTION DOGE
-$api_doge = "https://api.coingecko.com/api/v3/coins/dogecoin";
+$api_doge = "https://api.altilly.com/api/public/ticker/SPERODOGE";
 $union_api_doge = json_decode(file_get_contents($api_doge), true);
-//DOGE_USD
-$result_doge_dolar = $union_api_doge['market_data'];
-$result_doge_dolar2 = $result_doge_dolar['current_price'];
 //LAST PRICE BRL
-$latest_pricedoge = $result_doge_dolar2['brl'];
+$latest_pricedoge = $union_api_doge['last'];
 
 //FUNCTION SPERO
 $api_spero = "https://api.coingecko.com/api/v3/coins/sperocoin";
@@ -83,7 +80,7 @@ $result_spero_current = $result_spero_market['current_price'];
 $latest_price_spero = $result_spero_current['brl'];
 $latest_price_spero_eth = $result_spero_current['eth'];
 $latest_price_spero_btc = $result_spero_current['btc'];
-$latest_price_spero_doge = $latest_price_spero / $latest_pricedoge;
+$latest_price_spero_doge = $latest_pricedoge;
 //MARKETCAP
 $marketcap = $result_spero_market['market_cap'];
 $mktcap = $marketcap['brl'];
