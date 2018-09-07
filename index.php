@@ -156,6 +156,8 @@ try {
     /p2pbalance - Return all balances
     /airdrop - See here all Airdrops that SPERO is performing
     /bounties - Find here the rewards you can earn by performing tasks
+    /paymentsairdrop - Listing all AIRDROP payments
+    /paymentsbounties -  Listing all bounties payments
  "
             ]);
 
@@ -192,6 +194,8 @@ try {
     /p2pbalance - Return all balances
     /airdrop - See here all Airdrops that SPERO is performing
     /bounties - Find here the rewards you can earn by performing tasks
+    /paymentsairdrop - Listing all AIRDROP payments
+    /paymentsbounties -  Listing all bounties payments
   "
             ]);
 
@@ -429,9 +433,6 @@ AIRDROP AIODEX
 [RO] Votați pentru Spero, lăsați un comentariu cu adresa dvs. și obțineți 20 SPERO!
 
 https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1 (https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1)
-Payments AIRDROP 01:
-01 - Otahumele Nicholas - dd00846139ae87bc36644436e80b41076a25c1107d62752af157db41998b9731
-02 - Rock Star - 105ae5c1d193aab5aa1a0d1733a0c63a378fe8ab8ba97e6021203cca2441e7f2
 
 *******************************
 
@@ -455,9 +456,6 @@ https://t.me/joinchat/G7cebkL3dbRqfuy1gVNm3g
 💬Pra quem já está no grupo, somente envie seu endereço, preferencialmente o da Altilly.
 
 Total de participantes: 20
-Payments AIRDROP 02:
-01 - Otahumele Nicholas - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
-02 - Rock Star - f704a4fb0274d68488082acfbd97a7d5df8a460e1171db280fa231382fd19730
       "
                 ]);
 
@@ -492,6 +490,53 @@ Romanian: https://bitcointalk.org/index.php?topic=4601437.0
       "
                 ]);
 
+    }
+    else if($update->message->text == '/paymentsairdrop'|| $update->message->text == '/paymentsairdrop@sperocoinbot') //Comando "/paymentsairdrop" que retorna todos os pagamentos realizados para AIRDROPS
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+AIRDROP 01 - AIODEX:
+01 - Otahumele Nicholas - dd00846139ae87bc36644436e80b41076a25c1107d62752af157db41998b9731
+02 - Rock Star - 105ae5c1d193aab5aa1a0d1733a0c63a378fe8ab8ba97e6021203cca2441e7f2
+03 - Alan Hannah - ed97cea73084fe71919e9b59bc03ae0ca826ea527d0fa3391882f381731eaa9d
+04 - Odigie Victor - ed97cea73084fe71919e9b59bc03ae0ca826ea527d0fa3391882f381731eaa9d
+
+AIRDROP 02 - TELEGRAM:
+01 - @otahumele - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
+02 - @Mhi23 - f704a4fb0274d68488082acfbd97a7d5df8a460e1171db280fa231382fd19730
+03 - @JanEmilDenmark - e3b607f074d1d5861cac0b1892ff68a78571f8fd93df506df83564ce1b395632
+04 - @Alekmarques - e3b607f074d1d5861cac0b1892ff68a78571f8fd93df506df83564ce1b395632
+05 - @Rebelway518 - e3b607f074d1d5861cac0b1892ff68a78571f8fd93df506df83564ce1b395632
+06 - @Alanhannah - e3b607f074d1d5861cac0b1892ff68a78571f8fd93df506df83564ce1b395632
+07 - Odigie Victor - e3b607f074d1d5861cac0b1892ff68a78571f8fd93df506df83564ce1b395632
+      "
+                ]);
+    }
+    else if($update->message->text == '/paymentsbounties'|| $update->message->text == '/paymentsbounties@sperocoinbot') //Comando "/paymentsbounties" que retorna todos os pagamentos realizados por realização de tarefas
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+Wallet Android =
+Wallet IOS =
+Wallet MAC =
+Exchange = http://35.198.22.94:3001/tx/954af0b2e80730721d2f5edc30708a636802a27e5dfaa22fbbd620d5399f3cf5
+Point of Exchange (Social Market) =
+Point of Exchange (Social Market) =
+Point of Exchange (Social Market) =
+
+TRANSLATIONS:
+BrandNew ou Newbie =
+Jr. Member =
+Member =
+Full Member =
+Sr. Member =
+Hero ou Legendary =
+      "
+                ]);
     }
     else
     {
