@@ -139,7 +139,7 @@ try {
             'text' => "
 📖 List of commands:
     /status -> Get latest status
-    /price -> Get price in BTC, USD, BRL
+    /price -> Get price in BTC, USD, BRL and DOGE
     /info -> Technical information
     /social -> Shows the social networks of Spero
     /email -> Get email address of the owner
@@ -177,7 +177,7 @@ try {
             'text' => "
 📖 List of commands:
     /status -> Get latest status
-    /price -> Get price in BTC, USD, BRL
+    /price -> Get price in BTC, USD, BRL and DOGE
     /info -> Technical information
     /social -> Shows the social networks of Spero
     /email -> Get email address of the owner
