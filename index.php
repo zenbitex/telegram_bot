@@ -155,6 +155,7 @@ try {
     /bounties - Find here the rewards you can earn by performing tasks
     /paymentsairdrop - Listing all AIRDROP payments
     /paymentsbounties -  Listing all bounties payments
+    /lottery - Lottery SperoCoin
  "
             ]);
 
@@ -193,6 +194,7 @@ try {
     /bounties - Find here the rewards you can earn by performing tasks
     /paymentsairdrop - Listing all AIRDROP payments
     /paymentsbounties -  Listing all bounties payments
+    /lottery - Lottery SperoCoin
   "
             ]);
 
@@ -539,6 +541,37 @@ Sr. Member =
 Hero ou Legendary =
       "
                 ]);
+    }
+    else if($update->message->text == '/lottery'|| $update->message->text == '/lottery@sperocoinbot') //Comando "/lottery" que abre as opções de envio de comandos para participar dos sorteios da SperoCoin
+    {
+            $response = $client->sendChatAction(['chat_id' => $update->message->chat->id, 'action' => 'typing']);
+            $response = $client->sendMessage([
+                'chat_id' => $update->message->chat->id,
+                'text' => "
+[PORTUGUÊS]
+Lista de Comandos a serem utilizados:
+/participar - Com este simples comando você estará participando dos sorteios realizados pela SperoCoin
+/infosorteio - Mostra as informações do último sorteio
+/sairsorteio - Remove você da participação do sorteio
+/participantes - Ver número atual de participantes
+
+[ENGLISH]
+List of Commands to be used:
+/participar - With this simple command you will be participating in the draws made by SperoCoin
+/infosorteio - Shows the information of the last draw
+/sairsorteio - Remove you from the raffle participation
+/participantes - View current number of participants
+
+[ESPAÑOL]
+Lista de Comandos a utilizar:
+/participar - Con este sencillo comando usted estará participando en los sorteos realizados por SperoCoin
+/infosorteio - Muestra la información del último sorteo
+/sairsorteio - Quita usted de la participación del sorteo
+/participantes - Ver el número actual de participantes
+
+      "
+                ]);
+
     }
     else
     {
