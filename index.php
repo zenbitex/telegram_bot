@@ -549,6 +549,9 @@ Hero ou Legendary =
                 'chat_id' => $update->message->chat->id,
                 'text' => "
 [PORTUGUÊS]
+Premiação: 20 SPERO
+Data do Sorteio: Todo sábado
+Horário: 16h00min UTC -3:00
 Lista de Comandos a serem utilizados:
 /participar - Com este simples comando você estará participando dos sorteios realizados pela SperoCoin
 /infosorteio - Mostra as informações do último sorteio
@@ -556,6 +559,9 @@ Lista de Comandos a serem utilizados:
 /participantes - Ver número atual de participantes
 
 [ENGLISH]
+Awards: 20 SPERO
+Date of Draw: Every Saturday
+Time: 4:00 p.m. UTC -3: 00
 List of Commands to be used:
 /participar - With this simple command you will be participating in the draws made by SperoCoin
 /infosorteio - Shows the information of the last draw
@@ -563,6 +569,9 @@ List of Commands to be used:
 /participantes - View current number of participants
 
 [ESPAÑOL]
+Premiación: 20 SPERO
+Fecha del sorteo: Todos los sábados
+Horario: 16h00min UTC -3: 00
 Lista de Comandos a utilizar:
 /participar - Con este sencillo comando usted estará participando en los sorteos realizados por SperoCoin
 /infosorteio - Muestra la información del último sorteo
