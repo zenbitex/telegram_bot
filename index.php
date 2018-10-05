@@ -504,6 +504,7 @@ AIRDROP 01 - AIODEX:
 05 - Douglas Aquino - 3a5309be1b766e75697b96a5ff02e4a9a97015cff3c8e30c2e7685911e2c75aa
 06 - Lucas Souza - adea32b198bb8db8b44bbd1107ef8c2e2f46b1e903c3923588cc96e47bcbd0ea
 07 - Beatus Christian - 42d26f6bdad61794752b68d7e67b98c59c180cfac556e8b67d3e4802fe3ad975
+08 - Gabriel Silva - 6491f381a3d0785257cc091ab82b6040dcd1a4c8ba32d818555f8ed9dd589ffa
 
 AIRDROP 02 - TELEGRAM:
 01 - @otahumele - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
@@ -518,6 +519,8 @@ AIRDROP 02 - TELEGRAM:
 10 - @Regueromarley1 - f6290b3c314bca182ae3b0c845cf019904172975e5639745ce31ff5cfeebac26
 11 - @Biel2435 - c03a6237bae115de60911803390c0a421c8185ea6bd5941abb779fbc0d2e3421
 12 - @Jeffhinfreitas - b5483f2f0e6482771bad01402e1b7db51acd45df47c05770d3707cecac0dfe00
+13 - @Odacir - 21a19f54536272543271328f327eaa0f149b6d9361cd2f15a5ada0f2383bb1ec
+14 - @Leogarc9 - 2aec9b977e6ba8c317a3319dd36e14a3e513e38351d028ffe22d95bd8761a2e3
       "
                 ]);
     }
