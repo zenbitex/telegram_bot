@@ -431,8 +431,9 @@ AIRDROP AIODEX
 [KO] Spero에 투표하십시오. 주소와 함께 의견을 남기고 20 개의 SPERO를 얻으십시오!
 [RO] Votați pentru Spero, lăsați un comentariu cu adresa dvs. și obțineți 20 SPERO!
 
-https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1 (https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1)
+https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1
 
+Total number of participants: 15
 *******************************
 
 AIRDROP 02:
@@ -505,6 +506,7 @@ AIRDROP 01 - AIODEX:
 06 - Lucas Souza - adea32b198bb8db8b44bbd1107ef8c2e2f46b1e903c3923588cc96e47bcbd0ea
 07 - Beatus Christian - 42d26f6bdad61794752b68d7e67b98c59c180cfac556e8b67d3e4802fe3ad975
 08 - Gabriel Silva - 6491f381a3d0785257cc091ab82b6040dcd1a4c8ba32d818555f8ed9dd589ffa
+09 - jefferson freitas - c57cda3d4e9a5b9bee3570c4b9d4431fbeb7d0f4df1ac559b92429d85c571414
 
 AIRDROP 02 - TELEGRAM:
 01 - @otahumele - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
@@ -522,6 +524,8 @@ AIRDROP 02 - TELEGRAM:
 13 - @Odacir - 21a19f54536272543271328f327eaa0f149b6d9361cd2f15a5ada0f2383bb1ec
 14 - @Leogarc9 - 2aec9b977e6ba8c317a3319dd36e14a3e513e38351d028ffe22d95bd8761a2e3
 15 - @Sambit2017 - 6ba1ef89d941d4853a5de31445871b3a2ac8dba6b51abe9fd3249086b7375cdf
+16 - Danilo Dukler - 9ba889961740750cd158acf019bbc8403cdb1dd5f71cd051a6b75f1e037b8843
+17 - @CryptoExtrem - 7afee9d42d5fcf89935c1be29a9a9f5599c1aa4453a3a29b5ad933f37147b6db
       "
                 ]);
     }
