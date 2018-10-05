@@ -507,6 +507,7 @@ AIRDROP 01 - AIODEX:
 07 - Beatus Christian - 42d26f6bdad61794752b68d7e67b98c59c180cfac556e8b67d3e4802fe3ad975
 08 - Gabriel Silva - 6491f381a3d0785257cc091ab82b6040dcd1a4c8ba32d818555f8ed9dd589ffa
 09 - jefferson freitas - c57cda3d4e9a5b9bee3570c4b9d4431fbeb7d0f4df1ac559b92429d85c571414
+10 - Nayara Urgal - 01b941c3bd714491f1f112dbe512d8dbb38be55b097cee51127b80910036ad86
 
 AIRDROP 02 - TELEGRAM:
 01 - @otahumele - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
@@ -526,6 +527,7 @@ AIRDROP 02 - TELEGRAM:
 15 - @Sambit2017 - 6ba1ef89d941d4853a5de31445871b3a2ac8dba6b51abe9fd3249086b7375cdf
 16 - Danilo Dukler - 9ba889961740750cd158acf019bbc8403cdb1dd5f71cd051a6b75f1e037b8843
 17 - @CryptoExtrem - 7afee9d42d5fcf89935c1be29a9a9f5599c1aa4453a3a29b5ad933f37147b6db
+18 - @nayaraurgal - 72ec4678e782ec9a4a27d1aa988f27a5213422c6995a8ac5c0e0cd9bce18f82c
       "
                 ]);
     }
