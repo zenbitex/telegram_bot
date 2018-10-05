@@ -516,6 +516,8 @@ AIRDROP 02 - TELEGRAM:
 08 - @Trentux - 5f10707fb3faa634be07ef192bca8eb93de076dacb1d8c5fc4be33807097d42f
 09 - @bb_christian - b73dd0d25778bb0c07fc3650dbf51188bd6f4b2d2509505adc1ca71b0efaa0e6
 10 - @Regueromarley1 - f6290b3c314bca182ae3b0c845cf019904172975e5639745ce31ff5cfeebac26
+11 - @Biel2435 - c03a6237bae115de60911803390c0a421c8185ea6bd5941abb779fbc0d2e3421
+12 - @Jeffhinfreitas - b5483f2f0e6482771bad01402e1b7db51acd45df47c05770d3707cecac0dfe00
       "
                 ]);
     }
