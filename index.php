@@ -419,8 +419,8 @@ MERCADOPAGO: sperocoin@gmail.com
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-AIRDROP 01:
-AIRDROP AIODEX
+AIRDROP 01(CLOSED):
+AIRDROP AIODEX - CLOSED
 
 [PT-BR] Vote na Spero, deixe um comentário com seu endereço e ganhe 20 SPERO's!
 [EN] Vote for Spero, leave a comment with your address and get 20 SPERO's!
@@ -497,7 +497,7 @@ Romanian: https://bitcointalk.org/index.php?topic=4601437.0
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-AIRDROP 01 - AIODEX:
+AIRDROP 01 - AIODEX(CLOSED):
 01 - Otahumele Nicholas - dd00846139ae87bc36644436e80b41076a25c1107d62752af157db41998b9731
 02 - Rock Star - 105ae5c1d193aab5aa1a0d1733a0c63a378fe8ab8ba97e6021203cca2441e7f2
 03 - Alan Hannah - ed97cea73084fe71919e9b59bc03ae0ca826ea527d0fa3391882f381731eaa9d
