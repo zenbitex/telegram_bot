@@ -436,7 +436,7 @@ https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1
 Total number of participants: 15
 *******************************
 
-AIRDROP 02:
+AIRDROP 02(CLOSED):
 Airdrop SperoCoin this very moment!
 To participate simply enter our Telegram group and leave your wallet to deposit. Will be deposited 05 coins per user!
 Group:
@@ -514,7 +514,7 @@ AIRDROP 01 - AIODEX(CLOSED):
 14 - Timothy Contreras - 113d32a850cbdf472726340416705df52a9e7ae5742a94b0091f2468c49b13d2
 15 - Marvin Deen - 113d32a850cbdf472726340416705df52a9e7ae5742a94b0091f2468c49b13d2
 
-AIRDROP 02 - TELEGRAM:
+AIRDROP 02 - TELEGRAM(CLOSED):
 01 - @otahumele - 40fa9baf5346250f470873adf92b18b1c8f1760d1b1d8fc1a0d45d68498b76dd
 02 - @Mhi23 - f704a4fb0274d68488082acfbd97a7d5df8a460e1171db280fa231382fd19730
 03 - @JanEmilDenmark - e3b607f074d1d5861cac0b1892ff68a78571f8fd93df506df83564ce1b395632
@@ -534,6 +534,7 @@ AIRDROP 02 - TELEGRAM:
 17 - @CryptoExtrem - 7afee9d42d5fcf89935c1be29a9a9f5599c1aa4453a3a29b5ad933f37147b6db
 18 - @nayaraurgal - 72ec4678e782ec9a4a27d1aa988f27a5213422c6995a8ac5c0e0cd9bce18f82c
 19 - @Orleilson - b41b400a7945dc8807e7c41ce8f5f7291ebe12be03d457f39ee98c435db825dc
+20 - @Jhonthas - b054f9cee5992c94c0164f5bf96882d1bc8844e4bbe69c6561996157f2c4c197
       "
                 ]);
     }
