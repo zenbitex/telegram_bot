@@ -421,41 +421,11 @@ MERCADOPAGO: sperocoin@gmail.com
                 'text' => "
 AIRDROP 01(CLOSED):
 AIRDROP AIODEX - CLOSED
-
-[PT-BR] Vote na Spero, deixe um comentário com seu endereço e ganhe 20 SPERO's!
-[EN] Vote for Spero, leave a comment with your address and get 20 SPERO's!
-[ES] Votar por Spero, deja un comentario con su dirección y obtener 20 SPERO de!
-[ZH-CN] 为Spero投票，在您的地址留下评论并获得20 SPERO！
-[RU] Проголосуйте за Spero, оставьте комментарий с вашим адресом и получите 20 SPERO!
-[IT] Vota per Spero, lascia un commento con il tuo indirizzo e ottieni 20 SPERO!
-[KO] Spero에 투표하십시오. 주소와 함께 의견을 남기고 20 개의 SPERO를 얻으십시오!
-[RO] Votați pentru Spero, lăsați un comentariu cu adresa dvs. și obțineți 20 SPERO!
-
-https://aiodex.com/vote/coin/5b6a37b9d4341b150b079ba1
-
 Total number of participants: 15
 *******************************
-
 AIRDROP 02(CLOSED):
-Airdrop SperoCoin this very moment!
-To participate simply enter our Telegram group and leave your wallet to deposit. Will be deposited 05 coins per user!
-Group:
-
-💬https://t.me/joinchat/G7cebkL3dbRqfuy1gVNm3g
-
-For those already in the group, just send your address, preferably Altilly's.
-
 Total number of participants: 20
-——————————————————————————————
-Airdrop SperoCoin neste exato momento!
-Para participar basta entrar em nosso grupo do Telegram e deixar sua wallet para depósito. Serão depositados 05 moedas por usuário!
-Grupo:
-
-https://t.me/joinchat/G7cebkL3dbRqfuy1gVNm3g
-
-💬Pra quem já está no grupo, somente envie seu endereço, preferencialmente o da Altilly.
-
-Total de participantes: 20
+*******************************
       "
                 ]);
 
