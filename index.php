@@ -533,6 +533,7 @@ AIRDROP 02 - TELEGRAM:
 16 - Danilo Dukler - 9ba889961740750cd158acf019bbc8403cdb1dd5f71cd051a6b75f1e037b8843
 17 - @CryptoExtrem - 7afee9d42d5fcf89935c1be29a9a9f5599c1aa4453a3a29b5ad933f37147b6db
 18 - @nayaraurgal - 72ec4678e782ec9a4a27d1aa988f27a5213422c6995a8ac5c0e0cd9bce18f82c
+19 - @Orleilson - b41b400a7945dc8807e7c41ce8f5f7291ebe12be03d457f39ee98c435db825dc
       "
                 ]);
     }
