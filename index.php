@@ -436,9 +436,9 @@ Total number of participants: 20
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Wallet Android = 1000 SPERO
-Wallet IOS = 1000 SPERO
-Wallet MAC = 1000 SPERO
+Develop Android Wallet = 1000 SPERO
+Develop IOs Wallet = 1000 SPERO
+Develop MAC Wallet = 1000 SPERO
 Exchange = 10,000 SPERO - PAY TO COINSMARKETS
 3x Point of Exchange (Social Market) = 5,000
 
