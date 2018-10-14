@@ -426,6 +426,13 @@ Total number of participants: 15
 AIRDROP 02(CLOSED):
 Total number of participants: 20
 *******************************
+AIRDROP 03:
+Se a Spero chegar a 90 votos até o próximo sábado, dia 20/10/2018, estaremos sorteando 5 prêmios de 100 moedas para usuários daqui deste grupo!
+Link da Votação: https://smarts.exchange/vote-SPERO.html
+
+If Spero reaches 90 votes until next Saturday, 10/20/2018, we will be raffling 5 prizes of 100 coins for users from this group!
+Vote Link: https://smarts.exchange/vote-SPERO.html
+*******************************
       "
                 ]);
 
