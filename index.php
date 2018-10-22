@@ -228,9 +228,9 @@ try {
 💵 Price:
 Cotação/Price: Altilly
     BRL: ".number_format($latest_price_spero, 3, ',', '.')."
-    ETH: ".number_format($latest_price_spero_eth, 9, ',', '.')."
-    DOGE: ".number_format($latest_price_spero_doge, 9, ',', '.')."
-    BTC: ".number_format($latest_price_spero_btc, 9, ',', '.')."
+    ETH: ".number_format($latest_price_spero_eth, 8, ',', '.')."
+    DOGE: ".number_format($latest_price_spero_doge, 8, ',', '.')."
+    BTC: ".number_format($latest_price_spero_btc, 8, ',', '.')."
 
 https://altilly.com
 
@@ -287,8 +287,14 @@ Spero social networks
             $response = $client->sendMessage([
                 'chat_id' => $update->message->chat->id,
                 'text' => "
-Download External Link: https://drive.google.com/open?id=1MqVX9DgHTyK9bMKZZLCvM2fspUr8dHf0
-Download From Channel in Telegram: https://t.me/sperocoin_channel/204
+Seleção para testadores do aplicativo QT SperoCoin Android aberta!
+Segue link para responder o formulário:
+
+https://goo.gl/forms/UebNFDiihL1VmIBi1
+
+Número de vagas: 10
+Pagamento: 100 SPERO cada
+Data do Comunicado da Seleção: 27/10/2018
       "
                 ]);
 
