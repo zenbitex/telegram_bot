@@ -228,9 +228,9 @@ try {
 💵 Price:
 Cotação/Price: Altilly
     BRL: ".number_format($latest_price_spero, 3, ',', '.')."
-    ETH: ".number_format($latest_price_spero_eth, 8, ',', '.')."
-    DOGE: ".number_format($latest_price_spero_doge, 8, ',', '.')."
-    BTC: ".number_format($latest_price_spero_btc, 8, ',', '.')."
+    ETH: ".number_format($latest_price_spero_eth, 8, '.', ',')."
+    DOGE: ".number_format($latest_price_spero_doge, 8, '.', ',')."
+    BTC: ".number_format($latest_price_spero_btc, 8, '.', ',')."
 
 https://altilly.com
 
@@ -357,9 +357,9 @@ Run daemon in the SperoCoin/src directory:
 [RU] SperoCoin можно приобрести в режиме P2P официально по следующим ценам:
 
     REAIS(BRL): R$ ".number_format($preco_venda_reais, 2, ',', '.')."
-    BTC: ".number_format($preco_venda_btc, 8, ',', '.')."
-    ETH: ".number_format($preco_venda_eth, 8, ',', '.')."
-    DOGE: ".number_format($preco_venda_doge, 8, ',', '.')."
+    BTC: ".number_format($preco_venda_btc, 8, '.', ',')."
+    ETH: ".number_format($preco_venda_eth, 8, '.', ',')."
+    DOGE: ".number_format($preco_venda_doge, 8, '.', ',')."
 
 [PT] Para comprar entre no grupo e participe da comercialização livre:https://t.me/sperocoinexchange
 [EN] To buy in the group and participate in the free marketing: https://t.me/sperocoinexchange
@@ -382,9 +382,9 @@ Run daemon in the SperoCoin/src directory:
 [RU] SperoCoin может быть продан в режиме P2P официально по следующим ценам:
 
     REAIS(BRL): R$ ".number_format($preco_compra_reais, 2, ',', '.')."
-    BTC: ".number_format($preco_compra_btc, 8, ',', '.')."
-    ETH: ".number_format($preco_compra_eth, 8, ',', '.')."
-    DOGE: ".number_format($preco_compra_doge, 8, ',', '.')."
+    BTC: ".number_format($preco_compra_btc, 8, '.', ',')."
+    ETH: ".number_format($preco_compra_eth, 8, '.', ',')."
+    DOGE: ".number_format($preco_compra_doge, 8, '.', ',')."
 
 [PT] Para comprar entre no grupo e participe da comercialização livre:https://t.me/sperocoinexchange
 [EN] To buy in the group and participate in the free marketing: https://t.me/sperocoinexchange
